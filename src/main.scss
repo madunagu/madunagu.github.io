@@ -1,5 +1,253 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Alata&family=Biryani:wght@200;300;400;600;700;800;900&display=swap");
 
-@import '_variables.scss';
+@import "_variables.scss";
 
-@import '_mixins.scss';
+@import "_mixins.scss";
+
+body {
+  font-family: "Biryani";
+  // background-color: blue;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+section {
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 7rem;
+  // font-family: "Alata";
+  font-weight: 300;
+  font-size: clamp(3rem, 0.6rem + 6vw, 10rem);
+}
+
+.cta {
+  cursor: pointer;
+  color: #fff;
+  border-radius: 12px;
+  background: #2d60ec;
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 12px 20px 10px 20px;
+  span {
+    margin-left: 8px;
+  }
+}
+
+.navigation {
+  align-items: center;
+  .magnetic {
+    font-weight: 300;
+    &::after {
+      content: "";
+      width: 24px;
+      height: 1px;
+      border-radius: 4px;
+      background: #000;
+      display: block;
+      transition: all 0.34s ease-out;
+    }
+  }
+  .magnetic:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.hero {
+  // position: absolute;
+  background-color: #00000018;
+  font-family: "Advent Pro";
+  min-height: calc(100vh - 24px);
+  border-radius: 0 0 2rem 2rem;
+  header {
+    font-family: "Biryani";
+    font-weight: 600;
+  }
+  .banner {
+    height: 100vh;
+
+    .banner-text {
+      font-size: 6rem;
+      font-size: clamp(3rem, 0.6rem + 6vw, 10rem);
+      line-height: 6.2rem;
+      font-weight: 500;
+    }
+
+    .banner-tagline {
+      font-size: 3.625rem;
+      font-size: clamp(1.8rem, 0.6rem + 3vw, 4.8rem);
+      opacity: 0.8;
+    }
+    .display {
+      top: calc(100vh / 24 * 8);
+    }
+  }
+
+  .skill-slide {
+    margin-top: max(24rem, calc(100vh / 24 * 21 - 24px));
+    overflow: hidden;
+    border: 1px solid #909090;
+    border-left: none;
+    border-right: none;
+    color: #737373;
+    font-family: "Alata";
+    align-items: center;
+
+    .skill-item {
+      margin-right: clamp(1rem, 8vw, 7.4rem);
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+    .skill-item::before {
+      content: "*";
+      width: 10px;
+      height: 10px;
+      margin: 0px 8px 0px 0px;
+      border-radius: 50%;
+    }
+  }
+}
+.body-text-large {
+  font-size: 2.8rem;
+  font-size: clamp(1.6rem, 0.6rem + 2.4vw, 3.6rem);
+  font-weight: 300;
+  // line-height: 4;
+}
+.about {
+  .changing-image {
+    background: black;
+    border-radius: 12px;
+    width: 100%;
+    height: 500px;
+  }
+
+  .short-description {
+    font-weight: 300;
+    font-family: "Advent Pro";
+    font-size: 1.5rem;
+  }
+}
+.expertise {
+  .expertise-item {
+    .title {
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      font-size: clamp(1rem, 0.6rem + 2vw, 2rem);
+    }
+  }
+  .img-cont {
+    width: 100%;
+    background: #777;
+  }
+  .desc {
+    opacity: 0.74;
+    font-size: 2rem;
+    font-size: clamp(1.2rem, 0.6rem + 1.6vw, 3rem);
+    font-weight: 300;
+  }
+  .years {
+    .year {
+      font-family: "Advent Pro";
+      font-size: 7rem;
+      font-size: clamp(4rem, 0.6rem + 6vw, 10rem);
+      font-weight: 700;
+    }
+    .duration {
+      font-weight: 300;
+      font-size: 2rem;
+      font-size: clamp(1.6rem, 0.6rem + 1.6vw, 3rem);
+    }
+  }
+}
+
+.just-legible {
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+.bg-opaque {
+  background-color: #00000018;
+  border-radius: 2.4rem;
+  .image-highlight {
+    width: 80%;
+    background: grey;
+    height: 16rem;
+  }
+}
+
+.portfolio {
+  .portfolio-card {
+    background: linear-gradient(black, grey);
+    font-weight: 300;
+    text-transform: uppercase;
+
+    .pill {
+      font-family: "advent pro";
+      border: 1px solid white;
+      border-radius: 14rem;
+      padding: 0.2rem 1rem;
+      font-size: 1.2rem;
+      font-size: clamp(0.6rem, 0.2rem + 1.2vw, 2rem);
+    }
+  }
+  .portfolio-title {
+    font-size: clamp(1rem, 1rem + 1.5vw, 4rem);
+  }
+}
+
+.footer {
+  .contact-text {
+    font-family: "advent pro";
+    font-size: 6rem;
+    font-size: clamp(3rem, 0.6rem + 6vw, 10rem);
+    font-weight: 300;
+    letter-spacing: -0.18rem;
+    padding-top: calc(100vh / 24 * 3 + 12px);
+  }
+  .label {
+  }
+  .credits {
+    margin-top: min(5rem, calc(100vh / 24 * 4));
+  }
+  .socials {
+    button {
+      height: 40px;
+      width: 40px;
+      svg {
+        margin: auto;
+      }
+    }
+  }
+}
+
+body::before {
+  --cal: calc(8.3333333333% - 1px);
+  // --cal: calc(50% - 1px);
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  mix-blend-mode: difference;
+  background: repeating-linear-gradient(
+    to left,
+    rgba(245, 242, 235, 0) 0 var(--cal),
+    #f5f2eb var(--cal) calc(var(--cal) + 1px)
+  );
+  // background: repeating-linear-gradient(to bottom, rgba(245, 242, 235, 0) 0 var(--cal), #f5f2eb var(--cal) calc(var(--cal) + 1px));
+  --to-opacity: 0.2;
+  opacity: var(--to-opacity);
+}
+
+.cv {
+}

@@ -1,9 +1,8 @@
 import Lenis from "@studio-freight/lenis";
-import * as THREE from "three";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PixiPlugin } from "gsap/PixiPlugin";
-import "./style.scss";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import "./animation";
 
 console.log("Hello from Vite");
 

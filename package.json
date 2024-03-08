@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "watch-sass": "sass -w src/main.scss dist/main.css",
-    "watch-tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/tailwind.css --watch"
+    "watch-tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/tailwind.css --watch",
+    "all": "vite & npm run watch-sass & npm run watch-tailwind"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +21,7 @@
   "dependencies": {
     "@studio-freight/lenis": "^1.0.36",
     "gsap": "^3.12.5",
-    "three": "^0.161.0"
+    "three": "^0.161.0",
+    "tone": "^14.7.77"
   }
 }

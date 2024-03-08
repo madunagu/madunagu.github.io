@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <section class="hero">
+    <section class="about">
       <header class="absolute inset-x-0 top-0 z-50">
         <nav
           class="flex items-center justify-between p-6 lg:px-8"
@@ -60,7 +60,7 @@
           </div>
         </nav>
         <!-- Mobile menu, show/hide based on menu open state. -->
-        <div class="hidden lg:hidden" role="dialog" aria-modal="true">
+        <div class="lg:hidden" role="dialog" aria-modal="true">
           <div
             class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
           >
@@ -95,7 +95,7 @@
               </button>
             </div>
             <div class="mt-6 flow-root">
-              <div class="my-6 divide-y divide-gray-500/10">
+              <div class="-my-6 divide-y divide-gray-500/10">
                 <div class="space-y-2 py-6">
                   <a
                     href="#"
@@ -127,36 +127,12 @@
         </div>
       </header>
 
-      <div class="banner relative isolate px-6 pt-14 lg:px-10 flex flex-col">
-        <div class="display absolute inset-x-0 mx-6 lg:mx-10 grid grid-cols-12">
-          <div class="col-span-12 md:col-span-8 flex flex-col justify-center">
-            <h1 class="banner-text mb-6 md:mb-12 text-center md:text-left">
-              Crafting Digital Excellence
-            </h1>
-            <div class="banner-tagline text-center md:text-left">
-              Where Passion Meets Precision
-            </div>
-          </div>
-          <div class="col-span-12 md:col-span-4">
-            <div class="bg-black width-full height-full"></div>
-            <canvas id="rotor"></canvas>
-          </div>
-        </div>
 
-        <div class="music-indicator"></div>
-        <div
-          class="skill-slide md:flex py-2 justify-between overflow-y-hidden h-8"
-        >
-          <div class="skill-item">FULLSTACK SOFTWARE ENGINEER</div>
-          <div class="skill-item">BACKEND SPECIALIST</div>
-          <div class="skill-item">DESIGN ENTHUSIAST</div>
-        </div>
-      </div>
     </section>
 
-    <div class="content px-6 lg:px-10">
+    <div class="content lg:px-10">
       <section class="about grid grid-cols-12">
-        <p class="body-text-large col-span-10 py-16 lg:py-24">
+        <p class="body-text-large col-span-10 py-24">
           From the early days of tinkering with code on my phone to becoming
           proficient in a myriad of technologies, my journey embodies the
           essence of perseverance and determination. My love for music,
@@ -174,60 +150,40 @@
         </div>
       </section>
       <section class="expertise">
-        <h3 class="title mt-24">Expertise</h3>
-        <div class="divide-y border-y-2">
-          <div class="expertise-item pt-4 pb-8">
-            <div class="title pb-6">Flutter</div>
-            <div class="grid grid-cols-12 gap-2">
-              <div class="col-span-3 img-cont">
-                <img src="flutter-img" alt="" srcset="" />
-              </div>
-              <div class="col-span-6 desc px-2 lg:px-4">
-                Skilled in Flutter for building cross-platform mobile
-                applications with a focus on sleek designs and smooth
-                functionality, catering to diverse user preferences.
-              </div>
-              <div class="col-span-3 years">
-                <span class="year">5</span>
-                <span class="duration">Years</span>
-              </div>
+        <h3 class="title mt-24">CV</h3>
+        <div class="grid grid-cols-12">
+            <div class="col-span-10">
+                
+                <table class="table-auto w-full">
+                    <thead>
+                      <tr>
+                        <th>Song</th>
+                        <th>Artist</th>
+                        <th>Year</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
+                        <td>Malcolm Lockyer</td>
+                        <td>1961</td>
+                      </tr>
+                      <tr>
+                        <td>Witchy Woman</td>
+                        <td>The Eagles</td>
+                        <td>1972</td>
+                      </tr>
+                      <tr>
+                        <td>Shining Star</td>
+                        <td>Earth, Wind, and Fire</td>
+                        <td>1975</td>
+                      </tr>
+                    </tbody>
+                  </table>
+        
             </div>
-          </div>
-          <div class="expertise-item pt-4 pb-8">
-            <div class="title pb-6">Laravel</div>
-            <div class="grid grid-cols-12 gap-2">
-              <div class="col-span-3 img-cont">
-                <img src="flutter-img" alt="" srcset="" />
-              </div>
-              <div class="col-span-6 desc px-2 lg:px-4">
-                Proficient in leveraging Laravel's robust framework to develop
-                secure and efficient backend solutions, ensuring optimal
-                performance and reliability.
-              </div>
-              <div class="col-span-3 years">
-                <span class="year">6</span>
-                <span class="duration">Years</span>
-              </div>
-            </div>
-          </div>
-          <div class="expertise-item pt-4 pb-8">
-            <div class="title pb-6">Angular</div>
-            <div class="grid grid-cols-12 gap-2">
-              <div class="col-span-3 img-cont">
-                <img src="flutter-img" alt="" srcset="" />
-              </div>
-              <div class="col-span-6 desc px-2 lg:px-4">
-                Experience crafting dynamic and scalable web applications using
-                Angular, delivering seamless user experiences and intuitive
-                interfaces.
-              </div>
-              <div class="col-span-3 years">
-                <span class="year">7</span>
-                <span class="duration">Years</span>
-              </div>
-            </div>
-          </div>
         </div>
+
       </section>
     </div>
     <div class="bg-opaque my-24 px-6 py-10 lg:px-10 lg:py-24">
@@ -251,24 +207,20 @@
         </div>
       </div>
     </div>
-    <div class="content px-6 lg:px-10">
+    <div class="content lg:px-10">
       <section class="portfolio">
         <h3 class="title">Latest Projects</h3>
-        <div
-          class="custom-scroll grid grid-cols-12 gap-8 text-white mb-12 lg:mb-24 mt-6 lg:mt-14"
-        >
-          <div
-            class="portfolio-card col-span-12 lg:col-span-6 rounded-lg px-4 py-8 lg:px-8 h-72 lg:h-96"
-          >
+        <div class="custom-scroll grid grid-cols-12 gap-8 text-white mb-12 lg:mb-24 mt-14">
+          <div class="portfolio-card col-span-6 rounded-lg">
             <h3 class="portfolio-title">Logistics App Project</h3>
-            <div class="pills-row flex mt-2 lg:mt-4">
+            <div class="pills-row flex mt-2">
               <div class="pill">Flutter</div>
               <div class="pill">Laravel</div>
               <div class="pill">PHP</div>
               <div class="pill">Dart</div>
             </div>
           </div>
-          <div class="portfolio-card col-span-12 lg:col-span-6 rounded-lg">
+          <div class="portfolio-card col-span-6 rounded-lg">
             <h3 class="portfolio-title">Delivery Dashboard</h3>
             <div class="pills-row flex mt-2">
               <div class="pill">Angular</div>
@@ -283,7 +235,7 @@
         <div class="grid grid-cols-12">
           <div class="col-span-9">
             <div
-              class="navigation hidden lg:flex lg:flex-1 lg:justify-start lg:gap-x-24 mt-4 lg:mt-12"
+              class="navigation hidden  lg:flex lg:flex-1 lg:justify-start lg:gap-x-24 mt-14"
             >
               <a href="#" class="magnetic">Home</a>
               <a href="#" class="magnetic">About</a>
