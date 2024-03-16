@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <section class="hero">
+    <section class="hero" cursor-type="button">
       <header class="absolute inset-x-0 top-0 z-50">
         <nav
           class="flex items-center justify-between p-6 lg:px-8"
@@ -131,8 +131,15 @@
         <div class="display absolute inset-x-0 mx-6 lg:mx-10 grid grid-cols-12">
           <div class="col-span-12 md:col-span-8 flex flex-col justify-center">
             <h1 class="banner-text mb-6 md:mb-12 text-center md:text-left">
-              Crafting Digital Excellence
+              <span aria-hidden="true">
+                <span>Crafts<span>Ekene</span></span>
+                <span>Digital<span>David</span></span>
+                <span>Edifices<span>Madunagu</span></span>
+              </span>
             </h1>
+            <!-- <h1 class="banner-text mb-6 md:mb-12 text-center md:text-left">
+              Ekene David Madunagu
+            </h1> -->
             <div class="banner-tagline text-center md:text-left">
               Where Passion Meets Precision
             </div>
@@ -175,8 +182,8 @@
       </section>
       <section class="expertise">
         <h3 class="title mt-24">Expertise</h3>
-        <div class="divide-y border-y-2">
-          <div class="expertise-item pt-4 pb-8">
+        <div class="divide-y border-y border-zinc-400 divide-zinc-400">
+          <div class="expertise-item pt-4 pb-8 lg:pb-24">
             <div class="title pb-6">Flutter</div>
             <div class="grid grid-cols-12 gap-2">
               <div class="col-span-3 img-cont">
@@ -193,7 +200,7 @@
               </div>
             </div>
           </div>
-          <div class="expertise-item pt-4 pb-8">
+          <div class="expertise-item pt-4 pb-8 lg:pb-24">
             <div class="title pb-6">Laravel</div>
             <div class="grid grid-cols-12 gap-2">
               <div class="col-span-3 img-cont">
@@ -210,7 +217,7 @@
               </div>
             </div>
           </div>
-          <div class="expertise-item pt-4 pb-8">
+          <div class="expertise-item pt-4 pb-8 lg:pb-24">
             <div class="title pb-6">Angular</div>
             <div class="grid grid-cols-12 gap-2">
               <div class="col-span-3 img-cont">
@@ -230,7 +237,9 @@
         </div>
       </section>
     </div>
-    <div class="bg-opaque my-24 px-6 py-10 lg:px-10 lg:py-24">
+    <div
+      class="bg-opaque bg-white dark:bg-gray-50 card my-24 px-6 py-10 lg:px-10 lg:py-24"
+    >
       <div class="grid grid-cols-12">
         <div class="col-span-7">
           <p class="body-text-large">
@@ -280,32 +289,29 @@
         </div>
       </section>
       <section class="footer relative">
-        <div class="grid grid-cols-12">
-          <div class="col-span-9">
-            <div
-              class="navigation hidden lg:flex lg:flex-1 lg:justify-start lg:gap-x-24 mt-4 lg:mt-12"
-            >
-              <a href="#" class="magnetic">Home</a>
-              <a href="#" class="magnetic">About</a>
-              <a href="#" class="magnetic">Portfolio</a>
-            </div>
-            <h1 class="contact-text">Let's Work On a Project Together?</h1>
-            <div class="cta bg-black w-fit mt-4">Start a Conversation</div>
+        <div class="grid grid-cols-12 items-start">
+          <div
+            class="col-span-9 navigation hidden lg:flex lg:flex-1 lg:justify-start lg:gap-x-24 mt-4 lg:mt-12"
+          >
+            <a href="#" class="magnetic">Home</a>
+            <a href="#" class="magnetic">About</a>
+            <a href="#" class="magnetic">Portfolio</a>
           </div>
           <div class="col-span-3">
-            <img src="somehte" class="w-full" alt="" srcset="" />
-            <div class="label mt-24 just-legible">Location</div>
+            <img src="" class="w-full footer-image mx-4" alt="" srcset="" />
+          </div>
+        </div>
+        <h1 class="contact-text">Let's Work Together?</h1>
+        <div class="cta w-fit mt-4 lg:mt-12">Start a Conversation</div>
+        <div class="grid grid-cols-12">
+          <div class="col-span-9"></div>
+          <div class="col-span-3 mx-4">
+            <div class="label just-legible">Location</div>
             <div class="info">Lagos, Nigeria</div>
           </div>
         </div>
 
-        <div class="credits flex gap-x-24">
-          <div class="just-legible">
-            Ekene Madunagu&copy; all rights reserved
-          </div>
-          <div class="just-legible">Audio by godfabb</div>
-        </div>
-        <div class="socials flex gap-x-8 mt-6">
+        <div class="socials flex gap-x-8">
           <!-- Github -->
           <button type="button" class="rounded-full magnetic">
             <svg
@@ -353,7 +359,37 @@
             </svg>
           </button>
         </div>
+        <div class="credits flex gap-x-24">
+          <div class="just-legible">
+            Ekene Madunagu&copy; all rights reserved
+          </div>
+          <div class="just-legible">Audio by godfabb</div>
+        </div>
       </section>
+    </div>
+    <div class="blur-overlay fixed">
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+    </div>
+    <div id="cursor"></div>
+    <div class="spinner">
+      <svg
+        width="40"
+        height="40"
+        viewBox="0 0 26 26"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12.5449 0.759766C14.2844 0.759766 15.9139 1.08966 17.4334 1.74946C18.9529 2.40926 20.2825 3.30398 21.4222 4.43363C22.5618 5.56328 23.4616 6.88787 24.1213 8.40741C24.7811 9.92694 25.111 11.5564 25.111 13.2959C25.111 15.0354 24.7811 16.6649 24.1213 18.1844C23.4616 19.7039 22.5618 21.0335 21.4222 22.1732C20.2825 23.3128 18.9529 24.2125 17.4334 24.8723C15.9139 25.5321 14.2844 25.862 12.5449 25.862C10.8055 25.862 9.17596 25.5321 7.65643 24.8723C6.1369 24.2125 4.81231 23.3128 3.68266 22.1732C2.553 21.0335 1.65828 19.7039 0.998484 18.1844C0.338687 16.6649 0.00878906 15.0354 0.00878906 13.2959C0.00878906 11.5564 0.338687 9.92694 0.998484 8.40741C1.65828 6.88787 2.553 5.56328 3.68266 4.43363C4.81231 3.30398 6.1369 2.40926 7.65643 1.74946C9.17596 1.08966 10.8055 0.759766 12.5449 0.759766ZM8.64612 10.1769H5.4971V20.3737H8.64612V10.1769ZM7.05661 9.36711C7.49648 9.36711 7.87136 9.21716 8.18127 8.91725C8.49117 8.61734 8.64612 8.24746 8.64612 7.80759C8.64612 7.36773 8.49117 6.99784 8.18127 6.69793C7.87136 6.39803 7.49648 6.24807 7.05661 6.24807C6.61675 6.24807 6.24686 6.39803 5.94696 6.69793C5.64705 6.99784 5.4971 7.36773 5.4971 7.80759C5.4971 8.24746 5.64705 8.61734 5.94696 8.91725C6.24686 9.21716 6.61675 9.36711 7.05661 9.36711ZM19.6227 14.4655C19.6227 13.7458 19.4228 13.041 19.0229 12.3512C18.623 11.6614 18.1032 11.1366 17.4634 10.7767C16.8836 10.4568 16.2088 10.2868 15.439 10.2668C14.6693 10.2468 13.9645 10.3768 13.3247 10.6567V10.1769H10.2056V20.3737H13.3247V14.1356L14.6443 13.5058C14.8042 13.4259 15.0192 13.3859 15.2891 13.3859C15.559 13.3859 15.7739 13.4359 15.9339 13.5358C16.0538 13.5958 16.1738 13.7258 16.2938 13.9257C16.4137 14.1256 16.4737 14.3056 16.4737 14.4655V20.3737H19.6227V14.4655Z"
+          fill="currentColor"
+        />
+      </svg>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>

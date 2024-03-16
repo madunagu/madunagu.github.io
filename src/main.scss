@@ -36,17 +36,43 @@ section {
     margin-left: 8px;
   }
 }
+#cursor {
+  --x: 50%;
+  --y: 50%;
+  pointer-events: none;
+  width: 3rem;
+  height: 3rem;
+  border: solid 1px #ffffff32;
+  border-radius: 50%;
+  position: fixed;
+  top: var(--y);
+  left: var(--x);
+  // transition:  0.35s ease width, 0.35s ease height, 0.35s ease border,
+  //   0.35s ease background-color;
+  // transform: translate(-50%, -50%);
+  transition: .16s all ease;
+  z-index: 10;
+}
+
+#cursor.button {
+  width: 5rem;
+  height: 5rem;
+  border: solid 1px transparent;
+  background: #ffffff80;
+}
 
 .navigation {
   align-items: center;
+
+  --font-color: #000;
   .magnetic {
     font-weight: 300;
-    &::after {
+    ˝ &::after {
       content: "";
       width: 24px;
       height: 1px;
       border-radius: 4px;
-      background: #000;
+      background: var(--font-color);
       display: block;
       transition: all 0.34s ease-out;
     }
@@ -76,6 +102,38 @@ section {
       font-size: clamp(3rem, 0.6rem + 6vw, 10rem);
       line-height: 6.2rem;
       font-weight: 500;
+      display: inline-block;
+      position: relative;
+    }
+
+    .banner-text > span {
+      position: relative;
+      overflow: hidden;
+      display: block;
+    }
+    .banner-text > span > span {
+      display: inline-block;
+      transition: 0.6s ease-out all;
+      // transition-timing-function: cubic-bezier(1, 0.01, .01, 99);
+    }
+    .banner-text > span > span:nth-of-type(2) {
+      transition-delay: 0.1s;
+    }
+    .banner-text > span > span:nth-of-type(3) {
+      transition-delay: 0.2s;
+    }
+    .banner-text span > span > span {
+      content: attr(data-text);
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translateY(200%);
+    }
+
+    .banner-text:hover > span > span,
+    .banner-text:focus > span > span {
+      transform: translateY(-200%);
     }
 
     .banner-tagline {
@@ -171,8 +229,17 @@ section {
 }
 
 .bg-opaque {
-  background-color: #00000018;
-  border-radius: 2.4rem;
+  z-index: 5;
+  position: relative;
+  background: #ffffff18;
+  border-radius: 4rem;
+  .body-text-large {
+    font-size: clamp(1.2rem, 0.6rem + 2vw, 3rem);
+    opacity: 0.8;
+  }
+  .text-right {
+    opacity: 0.4;
+  }
   .image-highlight {
     width: 80%;
     background: grey;
@@ -201,20 +268,31 @@ section {
 }
 
 .footer {
+  position: relative;
+  height: 100svh;
+  // background-color: blue;
+  .navigation {
+    font-size: 0.9rem;
+  }
+  .footer-image {
+    background-color: blue;
+    // height: 16rem;
+    object-fit: cover;
+    height: clamp(16rem, 40vh, 30rem);
+  }
   .contact-text {
     font-family: "advent pro";
-    font-size: 6rem;
-    font-size: clamp(3rem, 0.6rem + 6vw, 10rem);
-    font-weight: 300;
-    letter-spacing: -0.18rem;
-    padding-top: calc(100vh / 24 * 3 + 12px);
+    font-size: 5rem;
+    font-size: clamp(3rem, 0.6rem + 5vw, 7rem);
   }
   .label {
   }
   .credits {
-    margin-top: min(5rem, calc(100vh / 24 * 4));
+    bottom: 44px;
+    position: absolute;
   }
   .socials {
+    margin-top: min(5rem, calc(100vh / 24 * 4));
     button {
       height: 40px;
       width: 40px;
@@ -250,4 +328,146 @@ body::before {
 }
 
 .cv {
+  // font-family: "Alata";
+  font-size: 1.2rem;
+  font-weight: 300;
 }
+
+.blur-overlay {
+  height: 100vh;
+  top: 0px;
+  z-index: -1;
+  opacity: 0.4;
+  width: 100vw;
+  filter: blur(120px);
+  .blurred {
+    border-radius: 50%;
+    position: absolute;
+  }
+  .blurred:nth-child(1) {
+    width: 529px;
+    height: 491px;
+    left: 857px;
+    top: 512px;
+    background: linear-gradient(
+      90deg,
+      hsla(50, 68%, 93%, 1) 0%,
+      hsla(18, 88%, 66%, 1) 50%,
+      hsla(288, 55%, 55%, 1) 100%
+    );
+  }
+  .blurred:nth-child(2) {
+    width: 282px;
+    height: 374px;
+    left: 196px;
+    top: 458px;
+    background: linear-gradient(
+      90deg,
+      hsla(352, 83%, 64%, 1) 0%,
+      hsla(230, 90%, 68%, 1) 100%
+    );
+  }
+  .blurred:nth-child(3) {
+    width: 230px;
+    height: 282px;
+    left: 104px;
+    top: 105px;
+    background: linear-gradient(
+      90deg,
+      hsla(297, 69%, 51%, 1) 0%,
+      hsla(310, 100%, 69%, 1) 49%,
+      hsla(23, 100%, 50%, 1) 100%
+    );
+  }
+}
+.spinner {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  background-color: #0000ff;
+  position: absolute;
+
+  bottom: 7.5rem;
+  right: 5rem;
+  cursor: pointer;
+}
+.dark {
+  background-color: black;
+  color: white;
+  .navigation {
+    --font-color: #fff;
+  }
+  .hero {
+    background-color: #ffffff28;
+  }
+  .bg-opaque {
+    background: #171717f0;
+  }
+  // .cta {
+  //   color: #000;
+  //   background-color: #fff;
+  // }
+}
+
+// .blur-overlay {
+//   height: 100vh;
+//   top: 0px;
+//   z-index: -1;
+//   opacity: 0.4;
+//   width: 100vw;
+//   filter: blur(100px);
+//   .blurred {
+//     border-radius: 50%;
+//     position: absolute;
+//   }
+//   .blurred:nth-child(1) {
+//     width: 529px;
+//     height: 491px;
+//     left: 857px;
+//     top: 512px;
+//     background: rgba(217, 147, 61, 0.2);
+//   }
+//   .blurred:nth-child(2) {
+//     width: 282px;
+//     height: 374px;
+//     left: 196px;
+//     top: 458px;
+//     background: rgba(242, 242, 242, 0.3);
+
+//   }
+//   .blurred:nth-child(3) {
+//     width: 230px;
+//     height: 282px;
+//     left: 104px;
+//     top: 105px;
+//     background: rgba(242, 82, 96, 0.3);
+//   }
+//   .blurred:nth-child(4) {
+//     width: 361px;
+//     height: 386px;
+//     left: 277px;
+//     top: 638px;
+//     background: rgba(178, 77, 203, 0.3);
+//   }
+//   .blurred:nth-child(5) {
+//     width: 561px;
+//     height: 526px;
+//     left: 865px;
+//     top: -207px;
+//     background: rgba(178, 77, 203, 0.4);
+//   }
+//   .blurred:nth-child(6) {
+//     width: 236px;
+//     height: 272px;
+//     left: 221px;
+//     top: 47px;
+//     background: rgba(242, 168, 29, 0.2);
+//   }
+//   .blurred:nth-child(7) {
+//     width: 370px;
+//     height: 403px;
+//     left: 46px;
+//     top: 621px;
+//     background: rgba(217, 147, 61, 0.4);
+//   }
+// }
