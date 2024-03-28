@@ -2,17 +2,25 @@ import Lenis from "@studio-freight/lenis";
 import { gsap } from "gsap";
 import { PixiPlugin } from "gsap/PixiPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
+import { NoToneMapping } from "three";
 // import "./animation";
 
 console.log("Hello from Vite");
 
+gsap.registerPlugin(ScrollTrigger, PixiPlugin);
+gsap.ticker.lagSmoothing(0);
+
 const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-let darkMode = darkModeMediaQuery.matches;
+let isDarkMode = darkModeMediaQuery.matches;
 
-let themeSwitcher = document.getElementById("changeTheme");
+
+let themeSwitcher = document.getElementById("change-theme");
 let cursor = document.getElementById("cursor");
-const onMouseMove = (e) => {
+let skillSlider = document.getElementById("skill-slider");
+let portfolioCards = gsap.utils.toArray(".portfolio .portfolio-card")
 
+const moveFollowingCursor = (e) => {
   const { clientX, clientY } = e;
   const x = Math.round((clientX / window.innerWidth) * 100);
   const y = Math.round((clientY / window.innerHeight) * 100);
@@ -20,48 +28,118 @@ const onMouseMove = (e) => {
   gsap.to(cursor, {
     '--x': `${x}%`,
     '--y': `${y}%`,
-    duration: 0.3,
-    ease: 'sine.out'
+    duration: 1.6,
+    ease: 'sine.out',
   });
-  // cursor.style.left = event.pageX + "px";
-  // cursor.style.top = event.pageY + "px";
-  // if (event.target.hasAttribute("cursor-type")) {
-  //   let cursorSize = event.target.getAttribute("cursor-type");
-  //   cursor.classList.add(cursorSize);
-  // } else {
-  //   cursor.classList = "";
-  // }
+  if (e.target.hasAttribute("cursor-type")) {
+    let cursorSize = e.target.getAttribute("cursor-type");
+    cursorSize = 'button';
+    cursor.classList.add(cursorSize);
+  } else {
+    cursor.classList = "";
+  }
 }
 
-function toggleThemeMode() {
-  if (darkMode) {
+const onScrollAnimations = (e) => {
+  console.log('Scolled to :');
+  console.log(e);
+}
+
+const setThemeMode = (mode) => {
+  if (mode) {
     document.body.classList.add("dark");
   } else {
     document.body.classList.remove("dark");
   }
-  darkMode = !darkMode;
 }
 
+const toggleThemeMode = () => {
+  isDarkMode = !isDarkMode;
+  setThemeMode(isDarkMode);
+
+  gsap.from(cursor, {
+    '--w': `120%`,
+    duration: 1.2,
+    ease: "expoScale(0.5,7,none)",
+  });
+}
+
+let scrollTween = gsap.to(portfolioCards, {
+  xPercent: -100 * (portfolioCards.length),
+  ease: 'none',
+  markers: true,
+  scrollTrigger: {
+    trigger: '.custom-scroll',
+    pin: true,
+    scrub: 1,
+    // markers: true,
+    // start:"top 5%",
+    end: "+=3000"
+  }
+});
+
+let sliderTween = gsap.to(skillSlider, {
+  ease: 'none',
+  marginLeft: '-100%',
+  // markers: true,
+  scrollTrigger: {
+    trigger: '#skill-slider',
+    // pin: true,
+    scrub: 1,
+    markers: true,
+    start: "top 90%",
+    // end: "+=3000"
+  }
+});
+
+const splitTypes = document.querySelectorAll(".body-text-large");
+splitTypes.forEach((char, i) => {
+  const text = new SplitType(char, { types: 'words' });
+  console.log(text);
+  gsap.from(text.words, {
+    scrollTrigger: {
+      trigger: char,
+      start: 'top 64%',
+      end: 'top 20%',
+      scrub: true,
+      // markers: true
+    },
+    opacity: 0.2,
+    stagger: 0.1,
+  });
+});
 
 const lenis = new Lenis();
 
-lenis.on("scroll", (e) => {
-  console.log(e);
-});
+// lenis.on("scroll", (e) => {
+//   console.log(e);
+// });
 
 lenis.on("scroll", ScrollTrigger.update);
-
 gsap.ticker.add((time) => {
   lenis.raf(time * 1000);
 });
 
-gsap.ticker.lagSmoothing(0);
+var tl = gsap.timeline({ repeat: 2, repeatDelay: 1 });
+tl.to("#logo", { duration: 1, rotate: 180 });
+// tl.to("#id", { y: 50, duration: 1 });
+// tl.to("#id", { opacity: 0, duration: 1 });
 
-gsap.registerPlugin(ScrollTrigger, PixiPlugin);
+// then we can control the whole thing easily...
+// tl.pause();
+// tl.resume();
+// tl.seek(1.5);
+// tl.reverse();
 
 
-toggleThemeMode(darkMode);
 
-window.addEventListener("mousemove", onMouseMove);
 
-themeSwitcher.addEventListener("click", toggleThemeMode)
+
+setThemeMode(isDarkMode);
+
+window.addEventListener("mousemove", moveFollowingCursor);
+window.addEventListener("scroll", onScrollAnimations);
+
+themeSwitcher.addEventListener("click", toggleThemeMode);
+
+

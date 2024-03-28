@@ -16,7 +16,7 @@
           aria-label="Global"
         >
           <div class="flex lg:flex-1">
-            <a href="#" class="-m-1.5 p-1.5">
+            <a id="logo" href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">Your Company</span>
               <img
                 class="h-8 w-auto"
@@ -48,13 +48,25 @@
             </button>
           </div>
 
-          <div
-            class="navigation hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-24"
-          >
-            <a href="#" class="magnetic">Home</a>
-            <a href="#" class="magnetic">About</a>
-            <a href="#" class="magnetic">Portfolio</a>
-            <a href="#" class="cta">
+          <div class="navigation hidden lg:flex lg:flex-1 lg:justify-end">
+            <a href="#" class="magnetic style-underlined">Home</a>
+            <a href="#" class="magnetic style-underlined">About</a>
+            <a href="#" class="magnetic style-underlined">Portfolio</a>
+            <div class="magnetic circled" id="change-theme">
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.16769 11.9999H6.10758C5.28312 11.9937 4.46821 11.8229 3.71056 11.4977C2.9529 11.1724 2.26774 10.6993 1.69519 10.1059C0.633474 8.97018 0.0299486 7.48138 0.0010851 5.92678C-0.0277784 4.37219 0.520066 2.862 1.53889 1.68767C2.19527 0.95189 3.02042 0.386511 3.94346 0.040114C4.05116 -0.00134051 4.16852 -0.0109104 4.28151 0.012547C4.3945 0.0360044 4.49836 0.0914977 4.58067 0.1724C4.65691 0.250161 4.7106 0.347173 4.73601 0.453077C4.76142 0.55898 4.75759 0.669799 4.72495 0.773699C4.39549 1.67621 4.33022 2.65399 4.53679 3.5923C4.74335 4.53061 5.21319 5.39053 5.89116 6.07114C6.57546 6.74721 7.4372 7.21558 8.3766 7.42202C9.31601 7.62847 10.2947 7.56455 11.1993 7.23766C11.3069 7.19975 11.4232 7.19329 11.5344 7.21902C11.6456 7.24476 11.7472 7.30164 11.8272 7.383C11.9073 7.46436 11.9626 7.56685 11.9866 7.67847C12.0106 7.7901 12.0023 7.90625 11.9627 8.01334C11.6556 8.83334 11.1759 9.57773 10.556 10.1961C9.97944 10.7711 9.29492 11.2265 8.54183 11.536C7.78873 11.8456 6.9819 12.0033 6.16769 11.9999Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <a href="#" class="magnetic cta" cursor-type="button">
               Contact<span aria-hidden="true">&rarr;</span></a
             >
           </div>
@@ -151,19 +163,33 @@
         </div>
 
         <div class="music-indicator"></div>
-        <div
+        <div class="skill-container">
+          <div
+            id="skill-slider"
+            class="skill-slide md:flex py-2 justify-between overflow-y-hidden h-8"
+          >
+            <div class="skill-item">FULLSTACK SOFTWARE ENGINEER</div>
+            <div class="skill-item">BACKEND SPECIALIST</div>
+            <div class="skill-item">DESIGN ENTHUSIAST</div>
+            <div class="skill-item">FULLSTACK SOFTWARE ENGINEER</div>
+            <div class="skill-item">BACKEND SPECIALIST</div>
+            <div class="skill-item">DESIGN ENTHUSIAST</div>
+          </div>
+          <div
+          id="skill-slider"
           class="skill-slide md:flex py-2 justify-between overflow-y-hidden h-8"
         >
           <div class="skill-item">FULLSTACK SOFTWARE ENGINEER</div>
           <div class="skill-item">BACKEND SPECIALIST</div>
           <div class="skill-item">DESIGN ENTHUSIAST</div>
         </div>
+        </div>
       </div>
     </section>
 
     <div class="content px-6 lg:px-10">
       <section class="about grid grid-cols-12">
-        <p class="body-text-large col-span-10 py-16 lg:py-24">
+        <p class="body-text-large about-text col-span-10 py-16 lg:py-24">
           From the early days of tinkering with code on my phone to becoming
           proficient in a myriad of technologies, my journey embodies the
           essence of perseverance and determination. My love for music,
@@ -172,7 +198,9 @@
         </p>
         <div class="col-span-2"></div>
         <div class="col-span-7">
-          <div class="changing-image"></div>
+          <div class="changing-image overflow-y-hidden">
+            <img class="object-cover mx-auto" src="images/homepage-pic-1.png" />
+          </div>
         </div>
         <div class="col-span-5">
           <div class="short-description px-8">
@@ -187,7 +215,102 @@
             <div class="title pb-6">Flutter</div>
             <div class="grid grid-cols-12 gap-2">
               <div class="col-span-3 img-cont">
-                <img src="flutter-img" alt="" srcset="" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 64 64"
+                >
+                  <g transform="matrix(.061615 0 0 .061615 -1.430818 -1.2754)">
+                    <defs>
+                      <path
+                        id="A"
+                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+                      />
+                    </defs>
+                    <clipPath id="B"><use xlink:href="#A" /></clipPath>
+                    <g clip-path="url(#B)">
+                      <path
+                        d="M360.3 779.7L520 939.5 959.4 500H639.9z"
+                        fill="#39cefd"
+                      />
+                    </g>
+                    <defs>
+                      <path
+                        id="C"
+                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+                      />
+                    </defs>
+                    <clipPath id="D"><use xlink:href="#C" /></clipPath>
+                    <path
+                      clip-path="url(#D)"
+                      d="M639.9 20.7h319.5l-679 679.1L120.6 540z"
+                      fill="#39cefd"
+                    />
+                    <defs>
+                      <path
+                        id="E"
+                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+                      />
+                    </defs>
+                    <clipPath id="F"><use xlink:href="#E" /></clipPath>
+                    <path
+                      clip-path="url(#F)"
+                      d="M520 939.5l119.9 119.8h319.5L679.8 779.7z"
+                      fill="#03569b"
+                    />
+                    <defs>
+                      <path
+                        id="G"
+                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+                      />
+                    </defs>
+                    <clipPath id="H"><use xlink:href="#G" /></clipPath>
+                    <linearGradient
+                      id="I"
+                      gradientUnits="userSpaceOnUse"
+                      x1="566.635"
+                      y1="970.339"
+                      x2="685.65"
+                      y2="851.324"
+                    >
+                      <stop offset="0" stop-color="#1a237e" stop-opacity=".4" />
+                      <stop offset="1" stop-color="#1a237e" stop-opacity="0" />
+                    </linearGradient>
+                    <path
+                      clip-path="url(#H)"
+                      d="M757 857.4l-77.2-77.7L520 939.5z"
+                      fill="url(#I)"
+                    />
+                    <defs>
+                      <path
+                        id="J"
+                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+                      />
+                    </defs>
+                    <clipPath id="K"><use xlink:href="#J" /></clipPath>
+                    <g clip-path="url(#K)">
+                      <path
+                        d="M360.282 779.645L520.086 619.84 679.9 779.645 520.086 939.45z"
+                        fill="#16b9fd"
+                      />
+                    </g>
+                    <radialGradient
+                      id="L"
+                      cx="7824.659"
+                      cy="-2855.979"
+                      r="5082.889"
+                      gradientTransform="matrix(0.25,0,0,-0.25,-1812,-622.5)"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0" stop-color="#fff" stop-opacity=".1" />
+                      <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                    </radialGradient>
+                    <path
+                      d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+                      fill="url(#L)"
+                    />
+                  </g>
+                </svg>
               </div>
               <div class="col-span-6 desc px-2 lg:px-4">
                 Skilled in Flutter for building cross-platform mobile
@@ -204,7 +327,12 @@
             <div class="title pb-6">Laravel</div>
             <div class="grid grid-cols-12 gap-2">
               <div class="col-span-3 img-cont">
-                <img src="flutter-img" alt="" srcset="" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                  <path
+                    d="M39.755 53.777a.985.985 0 0 1-.847-.479l-7.455-12.435-13.943 3.79a.985.985 0 0 1-1.1-.495L.117 13.534a.985.985 0 0 1 .737-1.442l13.833-1.86a.985.985 0 0 1 .979.468l16.7 27.87 19.406-5.277-6.47-9.14a.985.985 0 0 1 .55-1.53l9.08-2.146a.985.985 0 0 1 .996.341l7.857 9.8a.985.985 0 0 1-.512 1.568l-8.253 2.25 7.224 10.18a.985.985 0 0 1-.479 1.502l-21.695 7.588a.985.985 0 0 1-.314.061zm-6.328-13.453l6.757 11.268 19.692-6.894-6.878-9.695zM2.52 13.842l15.247 28.7 12.655-3.433-16.116-26.834zm45.25 10.366l6.052 8.534 7.527-2.047-6.548-8.154z"
+                    fill="#ef533f"
+                  />
+                </svg>
               </div>
               <div class="col-span-6 desc px-2 lg:px-4">
                 Proficient in leveraging Laravel's robust framework to develop
@@ -221,7 +349,20 @@
             <div class="title pb-6">Angular</div>
             <div class="grid grid-cols-12 gap-2">
               <div class="col-span-3 img-cont">
-                <img src="flutter-img" alt="" srcset="" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                  <path
+                    d="M1 5.3L15.892 0l15.284 5.218-2.47 19.694L15.892 32 3.286 25.004 1 5.3z"
+                    fill="#e23237"
+                  />
+                  <path
+                    d="M31.176 5.218L15.892 0v32l12.814-7.088 2.47-19.694z"
+                    fill="#b52e31"
+                  />
+                  <path
+                    d="M15.915 3.74l-9.28 20.64 3.463-.07 1.87-4.664h8.3l2.032 4.7 3.302.07L15.915 3.74zm.023 6.626l3.14 6.557H13.2l2.747-6.557z"
+                    fill="#fff"
+                  />
+                </svg>
               </div>
               <div class="col-span-6 desc px-2 lg:px-4">
                 Experience crafting dynamic and scalable web applications using
@@ -263,27 +404,87 @@
     <div class="content px-6 lg:px-10">
       <section class="portfolio">
         <h3 class="title">Latest Projects</h3>
-        <div
-          class="custom-scroll grid grid-cols-12 gap-8 text-white mb-12 lg:mb-24 mt-6 lg:mt-14"
-        >
-          <div
-            class="portfolio-card col-span-12 lg:col-span-6 rounded-lg px-4 py-8 lg:px-8 h-72 lg:h-96"
-          >
-            <h3 class="portfolio-title">Logistics App Project</h3>
-            <div class="pills-row flex mt-2 lg:mt-4">
-              <div class="pill">Flutter</div>
-              <div class="pill">Laravel</div>
-              <div class="pill">PHP</div>
-              <div class="pill">Dart</div>
+        <div class="custom-scroll text-white mb-12 lg:mb-24 mt-6 lg:mt-14">
+          <div class="portfolio-card col-span-12 lg:col-span-9 rounded-lg">
+            <img src="images/portfolio/wetrek.jpeg" alt="" class="portfolio-image">
+            <div class="overlay">
+              <h3 class="portfolio-title">Logistics App Project</h3>
+              <div class="pills-row flex mt-2 lg:mt-4">
+                <div class="pill">Flutter</div>
+                <div class="pill">Laravel</div>
+                <div class="pill">PHP</div>
+                <div class="pill">Dart</div>
+              </div>
+              <div class="flex justify-between">
+                
+              </div>
+            </div>
+          .</div>
+          <div class="portfolio-card col-span-12 lg:col-span-9 rounded-lg">
+            <img src="images/portfolio/qwestionone.png" alt="" class="portfolio-image">
+            <div class="overlay">
+              <h3 class="portfolio-title">Delivery Dashboard</h3>
+              <div class="pills-row flex mt-2">
+                <div class="pill">Angular</div>
+                <div class="pill">Laravel</div>
+                <div class="pill">PHP</div>
+                <div class="pill">Typescript</div>
+              </div>
             </div>
           </div>
-          <div class="portfolio-card col-span-12 lg:col-span-6 rounded-lg">
-            <h3 class="portfolio-title">Delivery Dashboard</h3>
-            <div class="pills-row flex mt-2">
-              <div class="pill">Angular</div>
-              <div class="pill">Laravel</div>
-              <div class="pill">PHP</div>
-              <div class="pill">Typescript</div>
+          <div class="portfolio-card col-span-12 lg:col-span-9 rounded-lg">
+            <div class="overlay">
+              <h3 class="portfolio-title">Delivery Dashboard</h3>
+              <div class="pills-row flex mt-2">
+                <div class="pill">Angular</div>
+                <div class="pill">Laravel</div>
+                <div class="pill">PHP</div>
+                <div class="pill">Typescript</div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card col-span-12 lg:col-span-9 rounded-lg">
+            <div class="overlay">
+              <h3 class="portfolio-title">Delivery Dashboard</h3>
+              <div class="pills-row flex mt-2">
+                <div class="pill">Angular</div>
+                <div class="pill">Laravel</div>
+                <div class="pill">PHP</div>
+                <div class="pill">Typescript</div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card col-span-12 lg:col-span-9 rounded-lg">
+            <div class="overlay">
+              <h3 class="portfolio-title">Delivery Dashboard</h3>
+              <div class="pills-row flex mt-2">
+                <div class="pill">Angular</div>
+                <div class="pill">Laravel</div>
+                <div class="pill">PHP</div>
+                <div class="pill">Typescript</div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card col-span-12 lg:col-span-9 rounded-lg">
+            <div class="overlay">
+              <h3 class="portfolio-title">Delivery Dashboard</h3>
+              <div class="pills-row flex mt-2">
+                <div class="pill">Angular</div>
+                <div class="pill">Laravel</div>
+                <div class="pill">PHP</div>
+                <div class="pill">Typescript</div>
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-card col-span-12 lg:col-span-9 rounded-lg">
+            <div class="overlay">
+              <h3 class="portfolio-title">Delivery Dashboard</h3>
+              <div class="pills-row flex mt-2">
+                <div class="pill">Angular</div>
+                <div class="pill">Laravel</div>
+                <div class="pill">PHP</div>
+                <div class="pill">Typescript</div>
+              </div>
             </div>
           </div>
         </div>
@@ -376,20 +577,16 @@
       <div class="blurred"></div>
       <div class="blurred"></div>
     </div>
-    <div id="cursor"></div>
+    <div class="" id="cursor"></div>
     <div class="spinner">
-      <svg
-        width="40"
-        height="40"
-        viewBox="0 0 26 26"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M12.5449 0.759766C14.2844 0.759766 15.9139 1.08966 17.4334 1.74946C18.9529 2.40926 20.2825 3.30398 21.4222 4.43363C22.5618 5.56328 23.4616 6.88787 24.1213 8.40741C24.7811 9.92694 25.111 11.5564 25.111 13.2959C25.111 15.0354 24.7811 16.6649 24.1213 18.1844C23.4616 19.7039 22.5618 21.0335 21.4222 22.1732C20.2825 23.3128 18.9529 24.2125 17.4334 24.8723C15.9139 25.5321 14.2844 25.862 12.5449 25.862C10.8055 25.862 9.17596 25.5321 7.65643 24.8723C6.1369 24.2125 4.81231 23.3128 3.68266 22.1732C2.553 21.0335 1.65828 19.7039 0.998484 18.1844C0.338687 16.6649 0.00878906 15.0354 0.00878906 13.2959C0.00878906 11.5564 0.338687 9.92694 0.998484 8.40741C1.65828 6.88787 2.553 5.56328 3.68266 4.43363C4.81231 3.30398 6.1369 2.40926 7.65643 1.74946C9.17596 1.08966 10.8055 0.759766 12.5449 0.759766ZM8.64612 10.1769H5.4971V20.3737H8.64612V10.1769ZM7.05661 9.36711C7.49648 9.36711 7.87136 9.21716 8.18127 8.91725C8.49117 8.61734 8.64612 8.24746 8.64612 7.80759C8.64612 7.36773 8.49117 6.99784 8.18127 6.69793C7.87136 6.39803 7.49648 6.24807 7.05661 6.24807C6.61675 6.24807 6.24686 6.39803 5.94696 6.69793C5.64705 6.99784 5.4971 7.36773 5.4971 7.80759C5.4971 8.24746 5.64705 8.61734 5.94696 8.91725C6.24686 9.21716 6.61675 9.36711 7.05661 9.36711ZM19.6227 14.4655C19.6227 13.7458 19.4228 13.041 19.0229 12.3512C18.623 11.6614 18.1032 11.1366 17.4634 10.7767C16.8836 10.4568 16.2088 10.2868 15.439 10.2668C14.6693 10.2468 13.9645 10.3768 13.3247 10.6567V10.1769H10.2056V20.3737H13.3247V14.1356L14.6443 13.5058C14.8042 13.4259 15.0192 13.3859 15.2891 13.3859C15.559 13.3859 15.7739 13.4359 15.9339 13.5358C16.0538 13.5958 16.1738 13.7258 16.2938 13.9257C16.4137 14.1256 16.4737 14.3056 16.4737 14.4655V20.3737H19.6227V14.4655Z"
-          fill="currentColor"
-        />
-      </svg>
+      <div class="play">
+        <svg viewBox="0 0 10 12" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1.71779 11.1732C1.51503 11.1732 1.31228 11.1207 1.12648 11.0148C0.941947 10.9114 0.788513 10.7605 0.682179 10.5776C0.575845 10.3948 0.520506 10.1868 0.521931 9.97532V2.02428C0.521931 1.58856 0.747862 1.20001 1.12648 0.984835C1.50469 0.769249 1.95407 0.773801 2.32855 0.996835L9.008 4.97256C9.37338 5.19021 9.59186 5.57421 9.59186 6.00001C9.59186 6.4258 9.37338 6.8098 9.008 7.02746L2.32897 11.0032C2.14432 11.114 1.93313 11.1727 1.71779 11.1732ZM1.71945 1.65518C1.65489 1.65575 1.59153 1.67269 1.53531 1.70442C1.47831 1.73599 1.43091 1.78238 1.39813 1.83869C1.36535 1.895 1.34841 1.95913 1.3491 2.02428V9.97573C1.3491 10.169 1.47903 10.2637 1.53531 10.2956C1.59163 10.3285 1.65579 10.3455 1.721 10.3448C1.7862 10.3441 1.85001 10.3259 1.90565 10.2919L8.58469 6.31615C8.7469 6.21973 8.76469 6.0629 8.76469 6.00001C8.76469 5.93711 8.74731 5.78028 8.58469 5.68387L1.90524 1.70815C1.8494 1.67366 1.78508 1.65532 1.71945 1.65518Z"
+            fill="black"
+          />
+        </svg>
+      </div>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>

@@ -126,3 +126,15 @@ Imagery:
 Curate high-quality images and graphics that align with the theme of the website, incorporating visuals related to technology, music, mathematics, and creativity. From abstract backgrounds to illustrations and photographs, these images will enhance the storytelling aspect of the design, immersing visitors in the developer's journey and passions.
 
 By carefully crafting a cohesive visual theme that blends elements of technology, music, and mathematics, "Digital Odyssey: A Symphony of Code, Music, and Mathematics" will offer a truly immersive and memorable browsing experience for visitors, inviting them to embark on a captivating journey of exploration and discovery.
+
+
+
+
+
+Threejs Links
+
+https://threejs.org/examples/webgpu_compute_audio.html
+
+https://threejs.org/examples/webgl_modifier_curve.html
+
+https://threejs.org/examples/webgl_instancing_dynamic.html
