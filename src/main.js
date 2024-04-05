@@ -9,7 +9,13 @@ import { NoToneMapping } from "three";
 console.log("Hello from Vite");
 
 gsap.registerPlugin(ScrollTrigger, PixiPlugin);
-gsap.ticker.lagSmoothing(0);
+// gsap.ticker.lagSmoothing(0);
+
+const lenis = new Lenis();
+lenis.on("scroll", ScrollTrigger.update);
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
 
 const darkModeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 let isDarkMode = darkModeMediaQuery.matches;
@@ -19,6 +25,7 @@ let themeSwitcher = document.getElementById("change-theme");
 let cursor = document.getElementById("cursor");
 let skillSlider = document.getElementById("skill-slider");
 let portfolioCards = gsap.utils.toArray(".portfolio .portfolio-card")
+let expertiseImages = gsap.utils.toArray(".expertise .img-cont")
 
 const moveFollowingCursor = (e) => {
   const { clientX, clientY } = e;
@@ -78,6 +85,16 @@ let scrollTween = gsap.to(portfolioCards, {
   }
 });
 
+// let expertiseTween = gsap.from(expertiseImages, {
+//   ease: 'sine.out',
+
+//   transform: `translate(-100%, 0px)`,
+//   markers: true,
+//   scrollTrigger: {
+//     trigger: '.expertise-item',
+//   }
+// });
+
 let sliderTween = gsap.to(skillSlider, {
   ease: 'none',
   marginLeft: '-100%',
@@ -109,16 +126,12 @@ splitTypes.forEach((char, i) => {
   });
 });
 
-const lenis = new Lenis();
 
 // lenis.on("scroll", (e) => {
 //   console.log(e);
 // });
 
-lenis.on("scroll", ScrollTrigger.update);
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000);
-});
+
 
 var tl = gsap.timeline({ repeat: 2, repeatDelay: 1 });
 tl.to("#logo", { duration: 1, rotate: 180 });
@@ -139,7 +152,4 @@ setThemeMode(isDarkMode);
 
 window.addEventListener("mousemove", moveFollowingCursor);
 window.addEventListener("scroll", onScrollAnimations);
-
 themeSwitcher.addEventListener("click", toggleThemeMode);
-
-
