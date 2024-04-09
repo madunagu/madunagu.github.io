@@ -323,9 +323,11 @@ section {
   cursor: none;
 }
 .portfolio .portfolio-card .portfolio-image {
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 12px;
   scale: 1;
+  height: 100%;
+  width: 100%;
 }
 .portfolio .portfolio-card .overlay {
   border-radius: 12px;
