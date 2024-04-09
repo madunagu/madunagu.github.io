@@ -714,6 +714,10 @@ video {
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .flex {
   display: flex;
 }
@@ -757,6 +761,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.shrink {
+  flex-shrink: 1;
 }
 
 .transform {
@@ -1045,6 +1053,14 @@ video {
 }
 
 @media (min-width: 1024px) {
+  .lg\:col-span-5 {
+    grid-column: span 5 / span 5;
+  }
+
+  .lg\:col-span-7 {
+    grid-column: span 7 / span 7;
+  }
+
   .lg\:col-span-9 {
     grid-column: span 9 / span 9;
   }

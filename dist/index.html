@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ekene Portfolio</title>
+    <link rel="stylesheet" href="dist/main.css" />
+    <link rel="stylesheet" href="dist/tailwind.css" />
+  <script defer src="main.js"></script></head>
+
+  <body>
+    <section class="hero" cursor-type="button">
+      <header class="absolute inset-x-0 top-0 z-50">
+        <nav
+          class="flex items-center justify-between p-6 lg:px-8"
+          aria-label="Global"
+        >
+          <div class="flex lg:flex-1">
+            <a id="logo" href="#" class="-m-1.5 p-1.5">
+              <span class="sigma">Σ</span>
+              <span class="bold">Kene</span>
+              <span class="conditional">M</span>
+              <span class="name">adunagu</span>
+            </a>
+          </div>
+          <div class="flex lg:hidden">
+            <button
+              type="button"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div
+            class="navigation lg:gap-x-24 hidden lg:flex lg:flex-1 lg:justify-end focus-cursor"
+          >
+            <a href="#" class="magnetic style-underlined" cursor-type="shrink"
+              >Home</a
+            >
+            <a href="#" class="magnetic style-underlined" cursor-type="shrink"
+              >About</a
+            >
+            <a href="#" class="magnetic style-underlined" cursor-type="shrink"
+              >Portfolio</a
+            >
+            <div class="magnetic circled" id="change-theme">
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.16769 11.9999H6.10758C5.28312 11.9937 4.46821 11.8229 3.71056 11.4977C2.9529 11.1724 2.26774 10.6993 1.69519 10.1059C0.633474 8.97018 0.0299486 7.48138 0.0010851 5.92678C-0.0277784 4.37219 0.520066 2.862 1.53889 1.68767C2.19527 0.95189 3.02042 0.386511 3.94346 0.040114C4.05116 -0.00134051 4.16852 -0.0109104 4.28151 0.012547C4.3945 0.0360044 4.49836 0.0914977 4.58067 0.1724C4.65691 0.250161 4.7106 0.347173 4.73601 0.453077C4.76142 0.55898 4.75759 0.669799 4.72495 0.773699C4.39549 1.67621 4.33022 2.65399 4.53679 3.5923C4.74335 4.53061 5.21319 5.39053 5.89116 6.07114C6.57546 6.74721 7.4372 7.21558 8.3766 7.42202C9.31601 7.62847 10.2947 7.56455 11.1993 7.23766C11.3069 7.19975 11.4232 7.19329 11.5344 7.21902C11.6456 7.24476 11.7472 7.30164 11.8272 7.383C11.9073 7.46436 11.9626 7.56685 11.9866 7.67847C12.0106 7.7901 12.0023 7.90625 11.9627 8.01334C11.6556 8.83334 11.1759 9.57773 10.556 10.1961C9.97944 10.7711 9.29492 11.2265 8.54183 11.536C7.78873 11.8456 6.9819 12.0033 6.16769 11.9999Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <a href="#" class="magnetic cta" cursor-type="button">
+              Contact<span aria-hidden="true">&rarr;</span></a
+            >
+          </div>
+        </nav>
+
+        <!-- Mobile menu, show/hide based on menu open state. -->
+        <div class="hidden lg:hidden" role="dialog" aria-modal="true">
+          <div
+            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+          >
+            <div class="flex items-center justify-between">
+              <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">Your Company</span>
+                <img
+                  class="h-8 w-auto"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                  alt=""
+                />
+              </a>
+              <button
+                type="button"
+                class="-m-2.5 rounded-md p-2.5 text-gray-700"
+              >
+                <span class="sr-only">Close menu</span>
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="my-6 divide-y divide-gray-500/10">
+                <div class="space-y-2 py-6">
+                  <a
+                    href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >Home</a
+                  >
+                  <a
+                    href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >About</a
+                  >
+
+                  <a
+                    href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >Portfolio</a
+                  >
+                </div>
+                <div class="py-6">
+                  <a
+                    href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >Contact</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="banner relative isolate px-6 pt-14 lg:px-10 flex flex-col">
+        <div class="display absolute inset-x-0 mx-6 lg:mx-10 grid grid-cols-12">
+          <div class="col-span-12 md:col-span-8 flex flex-col justify-center">
+            <h1 class="banner-text mb-6 md:mb-12 text-center md:text-left">
+              <span aria-hidden="true">
+                <span>Crafts<span>Ekene</span></span>
+                <span>Digital<span>David</span></span>
+                <span>Edifices<span>Madunagu</span></span>
+              </span>
+            </h1>
+            <!-- <h1 class="banner-text mb-6 md:mb-12 text-center md:text-left">
+              Ekene David Madunagu
+            </h1> -->
+            <div class="banner-tagline text-center md:text-left">
+              Full Stack Software Engineer
+            </div>
+          </div>
+          <div class="col-span-12 md:col-span-4">
+            <div class="bg-black width-full height-full">
+              <!-- <img class="w-full" id="rotor" src="images/sound-display.jpeg" /> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="music-indicator"></div>
+        <div class="skill-container">
+          <div
+            id="skill-slider"
+            class="skill-slide md:flex py-2 justify-between overflow-y-hidden h-8"
+          >
+            <div class="skill-item">FULLSTACK SOFTWARE ENGINEER</div>
+            <div class="skill-item">BACKEND SPECIALIST</div>
+            <div class="skill-item">FRONTEND ENGINEER</div>
+            <div class="skill-item">DESIGN ENTHUSIAST</div>
+            <div class="skill-item">CREATIVE DEVELOPER</div>
+            <div class="skill-item">MOBILE DEVELOPER</div>
+          </div>
+          <div
+            id="skill-slider"
+            class="skill-slide md:flex py-2 justify-between overflow-y-hidden h-8"
+          >
+            <div class="skill-item">FULLSTACK SOFTWARE ENGINEER</div>
+            <div class="skill-item">BACKEND SPECIALIST</div>
+            <div class="skill-item">DESIGN ENTHUSIAST</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="content px-6 lg:px-10">
+      <section class="about grid grid-cols-12">
+        <p class="body-text-large about-text col-span-10 py-16 lg:py-24">
+          From the early days of tinkering with code on my phone to becoming
+          proficient in a myriad of technologies, my journey embodies the
+          essence of perseverance and determination. My love for music,
+          particularly the guitar, has not only shaped my creative instincts but
+          also instilled discipline and rhythm in my approach to coding.
+        </p>
+        <div class="col-span-2"></div>
+        <div class="col-span-12 lg:col-span-7">
+          <div class="changing-image overflow-y-hidden">
+            <img
+              class="object-cover mx-auto"
+              src="images/eesbaystudiozn1-1.jpg"
+            />
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-5">
+          <div class="short-description px-8">
+            Commited to continual improvement through Passion, Practice and
+            Precision
+          </div>
+        </div>
+      </section>
+      <section class="expertise">
+        <h3 class="title mt-24">Expertise</h3>
+        <div class="divide-y border-y border-zinc-400 divide-zinc-400">
+          <div class="expertise-item pt-4 pb-8 lg:pb-24">
+            <div class="title pb-6">Flutter</div>
+            <div class="grid grid-cols-12 gap-2">
+              <div class="col-span-3 img-cont">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 64 64"
+                >
+                  <g transform="matrix(.061615 0 0 .061615 -1.430818 -1.2754)">
+                    <defs>
+                      <path
+                        id="A"
+                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+                      />
+                    </defs>
+                    <clipPath id="B"><use xlink:href="#A" /></clipPath>
+                    <g clip-path="url(#B)">
+                      <path
+                        d="M360.3 779.7L520 939.5 959.4 500H639.9z"
+                        fill="#39cefd"
+                      />
+                    </g>
+                    <defs>
+                      <path
+                        id="C"
+                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+                      />
+                    </defs>
+                    <clipPath id="D"><use xlink:href="#C" /></clipPath>
+                    <path
+                      clip-path="url(#D)"
+                      d="M639.9 20.7h319.5l-679 679.1L120.6 540z"
+                      fill="#39cefd"
+                    />
+                    <defs>
+                      <path
+                        id="E"
+                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+                      />
+                    </defs>
+                    <clipPath id="F"><use xlink:href="#E" /></clipPath>
+                    <path
+                      clip-path="url(#F)"
+                      d="M520 939.5l119.9 119.8h319.5L679.8 779.7z"
+                      fill="#03569b"
+                    />
+                    <defs>
+                      <path
+                        id="G"
+                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+                      />
+                    </defs>
+                    <clipPath id="H"><use xlink:href="#G" /></clipPath>
+                    <linearGradient
+                      id="I"
+                      gradientUnits="userSpaceOnUse"
+                      x1="566.635"
+                      y1="970.339"
+                      x2="685.65"
+                      y2="851.324"
+                    >
+                      <stop offset="0" stop-color="#1a237e" stop-opacity=".4" />
+                      <stop offset="1" stop-color="#1a237e" stop-opacity="0" />
+                    </linearGradient>
+                    <path
+                      clip-path="url(#H)"
+                      d="M757 857.4l-77.2-77.7L520 939.5z"
+                      fill="url(#I)"
+                    />
+                    <defs>
+                      <path
+                        id="J"
+                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+                      />
+                    </defs>
+                    <clipPath id="K"><use xlink:href="#J" /></clipPath>
+                    <g clip-path="url(#K)">
+                      <path
+                        d="M360.282 779.645L520.086 619.84 679.9 779.645 520.086 939.45z"
+                        fill="#16b9fd"
+                      />
+                    </g>
+                    <radialGradient
+                      id="L"
+                      cx="7824.659"
+                      cy="-2855.979"
+                      r="5082.889"
+                      gradientTransform="matrix(0.25,0,0,-0.25,-1812,-622.5)"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop offset="0" stop-color="#fff" stop-opacity=".1" />
+                      <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                    </radialGradient>
+                    <path
+                      d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
+                      fill="url(#L)"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <div class="col-span-6 desc px-2 lg:px-4">
+                Skilled in Flutter for building cross-platform mobile
+                applications with a focus on sleek designs and smooth
+                functionality, catering to diverse user preferences.
+              </div>
+              <div class="col-span-3 years">
+                <span class="year">5</span>
+                <span class="duration">Years</span>
+              </div>
+            </div>
+          </div>
+          <div class="expertise-item pt-4 pb-8 lg:pb-24">
+            <div class="title pb-6">Laravel</div>
+            <div class="grid grid-cols-12 gap-2">
+              <div class="col-span-3 img-cont">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                  <path
+                    d="M39.755 53.777a.985.985 0 0 1-.847-.479l-7.455-12.435-13.943 3.79a.985.985 0 0 1-1.1-.495L.117 13.534a.985.985 0 0 1 .737-1.442l13.833-1.86a.985.985 0 0 1 .979.468l16.7 27.87 19.406-5.277-6.47-9.14a.985.985 0 0 1 .55-1.53l9.08-2.146a.985.985 0 0 1 .996.341l7.857 9.8a.985.985 0 0 1-.512 1.568l-8.253 2.25 7.224 10.18a.985.985 0 0 1-.479 1.502l-21.695 7.588a.985.985 0 0 1-.314.061zm-6.328-13.453l6.757 11.268 19.692-6.894-6.878-9.695zM2.52 13.842l15.247 28.7 12.655-3.433-16.116-26.834zm45.25 10.366l6.052 8.534 7.527-2.047-6.548-8.154z"
+                    fill="#ef533f"
+                  />
+                </svg>
+              </div>
+              <div class="col-span-6 desc px-2 lg:px-4">
+                Proficient in leveraging Laravel's robust framework to develop
+                secure and efficient backend solutions, ensuring optimal
+                performance and reliability.
+              </div>
+              <div class="col-span-3 years">
+                <span class="year">6</span>
+                <span class="duration">Years</span>
+              </div>
+            </div>
+          </div>
+          <div class="expertise-item pt-4 pb-8 lg:pb-24">
+            <div class="title pb-6">Angular</div>
+            <div class="grid grid-cols-12 gap-2">
+              <div class="col-span-3 img-cont">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                  <path
+                    d="M1 5.3L15.892 0l15.284 5.218-2.47 19.694L15.892 32 3.286 25.004 1 5.3z"
+                    fill="#e23237"
+                  />
+                  <path
+                    d="M31.176 5.218L15.892 0v32l12.814-7.088 2.47-19.694z"
+                    fill="#b52e31"
+                  />
+                  <path
+                    d="M15.915 3.74l-9.28 20.64 3.463-.07 1.87-4.664h8.3l2.032 4.7 3.302.07L15.915 3.74zm.023 6.626l3.14 6.557H13.2l2.747-6.557z"
+                    fill="#fff"
+                  />
+                </svg>
+              </div>
+              <div class="col-span-6 desc px-2 lg:px-4">
+                Experience crafting dynamic and scalable web applications using
+                Angular, delivering seamless user experiences and intuitive
+                interfaces.
+              </div>
+              <div class="col-span-3 years">
+                <span class="year">7</span>
+                <span class="duration">Years</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div
+      class="bg-opaque bg-white dark:bg-gray-50 card my-24 px-6 py-10 lg:px-10 lg:py-24"
+    >
+      <div class="grid grid-cols-12">
+        <div class="col-span-7">
+          <p class="body-text-large">
+            Beyond the realm of technology, my interests in music and
+            mathematics fuel my creative spirit. Whether strumming melodies on
+            my guitar or unraveling the complexities of mathematical algorithms,
+            I find inspiration in harmonizing logic with creativity.
+          </p>
+        </div>
+        <div class="col-span-5 flex flex-col items-end">
+          <img src="images/cover_front.jpg" class="image-highlight" />
+          <p class="body-text-large text-right my-4">
+            Passion for Music and Mathematics
+          </p>
+          <div class="cta w-fit">
+            Contact me <span aria-hidden="true">&rarr;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content px-6 lg:px-10">
+      <section class="portfolio">
+        <h3 class="title">Latest Projects</h3>
+        <div class="custom-scroll text-white mb-12 lg:mb-24 mt-6 lg:mt-14">
+          <div class="col-span-12 lg:col-span-9"></div>
+          <div
+            class="portfolio-card col-span-12 lg:col-span-9 rounded-lg button-cursor"
+            cursor-type="button"
+          >
+            <img
+              src="images/portfolio/wetrek.jpeg"
+              alt=""
+              class="portfolio-image"
+            />
+            <div class="overlay" cursor-type="shrink">
+              <div class="portfolio-details">
+                <h3 class="portfolio-title">Logistics App Project</h3>
+                <div class="pills-row flex mt-2 lg:mt-4">
+                  <div class="pill">Flutter</div>
+                  <div class="pill">Laravel</div>
+                  <div class="pill">PHP</div>
+                  <div class="pill">Dart</div>
+                </div>
+              </div>
+              <a
+                class="rounded-full border open-icon magnetic focus-cursor"
+                href="#"
+              >
+                <svg
+                  viewBox="0 0 26 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.40489 19.7918C8.40489 19.893 8.28848 19.974 8.14172 19.974C7.97471 19.9891 7.8583 19.9082 7.8583 19.7918C7.8583 19.6905 7.97471 19.6096 8.12147 19.6096C8.2733 19.5944 8.40489 19.6754 8.40489 19.7918ZM6.83093 19.564C6.79551 19.6652 6.89673 19.7816 7.04855 19.812C7.18014 19.8626 7.33197 19.812 7.36233 19.7108C7.3927 19.6096 7.29654 19.4932 7.14471 19.4476C7.01313 19.4122 6.86636 19.4628 6.83093 19.564ZM9.06787 19.478C8.9211 19.5134 8.81988 19.6096 8.83507 19.726C8.85025 19.8272 8.98183 19.893 9.13366 19.8576C9.28043 19.8221 9.38165 19.726 9.36646 19.6248C9.35128 19.5286 9.21464 19.4628 9.06787 19.478ZM12.398 0.0844727C5.37844 0.0844727 0.00878906 5.41364 0.00878906 12.4332C0.00878906 18.0457 3.54132 22.8486 8.58708 24.5389C9.23488 24.6553 9.46262 24.2555 9.46262 23.9266C9.46262 23.6128 9.44744 21.8819 9.44744 20.8191C9.44744 20.8191 5.90478 21.5783 5.16082 19.311C5.16082 19.311 4.58388 17.8382 3.75388 17.4587C3.75388 17.4587 2.59493 16.6641 3.83486 16.6793C3.83486 16.6793 5.09503 16.7805 5.78838 17.985C6.89673 19.9385 8.75409 19.3768 9.47781 19.0427C9.59421 18.233 9.92317 17.6712 10.2876 17.3372C7.45849 17.0234 4.60412 16.6135 4.60412 11.7449C4.60412 10.3531 4.98875 9.65471 5.7985 8.76398C5.66692 8.43502 5.23674 7.07869 5.93009 5.32761C6.98782 4.99864 9.42213 6.69406 9.42213 6.69406C10.4343 6.41065 11.5224 6.26388 12.6004 6.26388C13.6784 6.26388 14.7665 6.41065 15.7787 6.69406C15.7787 6.69406 18.213 4.99358 19.2707 5.32761C19.9641 7.08375 19.5339 8.43502 19.4023 8.76398C20.2121 9.65977 20.708 10.3582 20.708 11.7449C20.708 16.6287 17.7271 17.0184 14.8981 17.3372C15.3637 17.737 15.7584 18.4962 15.7584 19.6855C15.7584 21.391 15.7432 23.5014 15.7432 23.9164C15.7432 24.2454 15.9761 24.6452 16.6188 24.5288C21.6797 22.8486 25.111 18.0457 25.111 12.4332C25.111 5.41364 19.4175 0.0844727 12.398 0.0844727ZM4.92802 17.5397C4.86223 17.5903 4.87741 17.7067 4.96345 17.8028C5.04442 17.8838 5.16082 17.9192 5.22662 17.8534C5.29241 17.8028 5.27723 17.6864 5.19119 17.5903C5.11022 17.5093 4.99381 17.4739 4.92802 17.5397ZM4.38144 17.1297C4.34601 17.1955 4.39662 17.2765 4.49784 17.3271C4.57882 17.3777 4.68004 17.3625 4.71546 17.2917C4.75089 17.2259 4.70028 17.1449 4.59906 17.0943C4.49784 17.0639 4.41687 17.0791 4.38144 17.1297ZM6.02118 18.9314C5.94021 18.9972 5.97057 19.149 6.08698 19.2452C6.20338 19.3616 6.35014 19.3768 6.41594 19.2958C6.48173 19.23 6.45136 19.0782 6.35014 18.982C6.2388 18.8656 6.08698 18.8504 6.02118 18.9314ZM5.44424 18.1875C5.36326 18.2381 5.36326 18.3696 5.44424 18.486C5.52521 18.6024 5.66186 18.6531 5.72765 18.6024C5.80862 18.5367 5.80862 18.4051 5.72765 18.2887C5.6568 18.1723 5.52521 18.1217 5.44424 18.1875Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div
+            class="portfolio-card col-span-12 lg:col-span-9 rounded-lg button-cursor"
+          >
+            <img
+              src="images/portfolio/wetrek.jpeg"
+              alt=""
+              class="portfolio-image"
+            />
+            <div class="overlay" cursor-type="shrink">
+              <div class="portfolio-details">
+                <h3 class="portfolio-title">Logistics App Project</h3>
+                <div class="pills-row flex mt-2 lg:mt-4">
+                  <div class="pill">Flutter</div>
+                  <div class="pill">Laravel</div>
+                  <div class="pill">PHP</div>
+                  <div class="pill">Dart</div>
+                </div>
+              </div>
+              <a class="rounded-full border open-icon magnetic" href="#">
+                <svg
+                  viewBox="0 0 26 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.40489 19.7918C8.40489 19.893 8.28848 19.974 8.14172 19.974C7.97471 19.9891 7.8583 19.9082 7.8583 19.7918C7.8583 19.6905 7.97471 19.6096 8.12147 19.6096C8.2733 19.5944 8.40489 19.6754 8.40489 19.7918ZM6.83093 19.564C6.79551 19.6652 6.89673 19.7816 7.04855 19.812C7.18014 19.8626 7.33197 19.812 7.36233 19.7108C7.3927 19.6096 7.29654 19.4932 7.14471 19.4476C7.01313 19.4122 6.86636 19.4628 6.83093 19.564ZM9.06787 19.478C8.9211 19.5134 8.81988 19.6096 8.83507 19.726C8.85025 19.8272 8.98183 19.893 9.13366 19.8576C9.28043 19.8221 9.38165 19.726 9.36646 19.6248C9.35128 19.5286 9.21464 19.4628 9.06787 19.478ZM12.398 0.0844727C5.37844 0.0844727 0.00878906 5.41364 0.00878906 12.4332C0.00878906 18.0457 3.54132 22.8486 8.58708 24.5389C9.23488 24.6553 9.46262 24.2555 9.46262 23.9266C9.46262 23.6128 9.44744 21.8819 9.44744 20.8191C9.44744 20.8191 5.90478 21.5783 5.16082 19.311C5.16082 19.311 4.58388 17.8382 3.75388 17.4587C3.75388 17.4587 2.59493 16.6641 3.83486 16.6793C3.83486 16.6793 5.09503 16.7805 5.78838 17.985C6.89673 19.9385 8.75409 19.3768 9.47781 19.0427C9.59421 18.233 9.92317 17.6712 10.2876 17.3372C7.45849 17.0234 4.60412 16.6135 4.60412 11.7449C4.60412 10.3531 4.98875 9.65471 5.7985 8.76398C5.66692 8.43502 5.23674 7.07869 5.93009 5.32761C6.98782 4.99864 9.42213 6.69406 9.42213 6.69406C10.4343 6.41065 11.5224 6.26388 12.6004 6.26388C13.6784 6.26388 14.7665 6.41065 15.7787 6.69406C15.7787 6.69406 18.213 4.99358 19.2707 5.32761C19.9641 7.08375 19.5339 8.43502 19.4023 8.76398C20.2121 9.65977 20.708 10.3582 20.708 11.7449C20.708 16.6287 17.7271 17.0184 14.8981 17.3372C15.3637 17.737 15.7584 18.4962 15.7584 19.6855C15.7584 21.391 15.7432 23.5014 15.7432 23.9164C15.7432 24.2454 15.9761 24.6452 16.6188 24.5288C21.6797 22.8486 25.111 18.0457 25.111 12.4332C25.111 5.41364 19.4175 0.0844727 12.398 0.0844727ZM4.92802 17.5397C4.86223 17.5903 4.87741 17.7067 4.96345 17.8028C5.04442 17.8838 5.16082 17.9192 5.22662 17.8534C5.29241 17.8028 5.27723 17.6864 5.19119 17.5903C5.11022 17.5093 4.99381 17.4739 4.92802 17.5397ZM4.38144 17.1297C4.34601 17.1955 4.39662 17.2765 4.49784 17.3271C4.57882 17.3777 4.68004 17.3625 4.71546 17.2917C4.75089 17.2259 4.70028 17.1449 4.59906 17.0943C4.49784 17.0639 4.41687 17.0791 4.38144 17.1297ZM6.02118 18.9314C5.94021 18.9972 5.97057 19.149 6.08698 19.2452C6.20338 19.3616 6.35014 19.3768 6.41594 19.2958C6.48173 19.23 6.45136 19.0782 6.35014 18.982C6.2388 18.8656 6.08698 18.8504 6.02118 18.9314ZM5.44424 18.1875C5.36326 18.2381 5.36326 18.3696 5.44424 18.486C5.52521 18.6024 5.66186 18.6531 5.72765 18.6024C5.80862 18.5367 5.80862 18.4051 5.72765 18.2887C5.6568 18.1723 5.52521 18.1217 5.44424 18.1875Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div
+            class="portfolio-card col-span-12 lg:col-span-9 rounded-lg button-cursor"
+            cursor-type="button"
+          >
+            <img
+              src="images/portfolio/qwestionone.png"
+              alt=""
+              class="portfolio-image"
+            />
+            <div class="overlay" cursor-type="shrink">
+              <div class="portfolio-details">
+                <h3 class="portfolio-title">Logistics App Project</h3>
+                <div class="pills-row flex mt-2 lg:mt-4">
+                  <div class="pill">Flutter</div>
+                  <div class="pill">Laravel</div>
+                  <div class="pill">PHP</div>
+                  <div class="pill">Dart</div>
+                </div>
+              </div>
+              <a class="rounded-full border open-icon magnetic" href="#">
+                <svg
+                  viewBox="0 0 26 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.40489 19.7918C8.40489 19.893 8.28848 19.974 8.14172 19.974C7.97471 19.9891 7.8583 19.9082 7.8583 19.7918C7.8583 19.6905 7.97471 19.6096 8.12147 19.6096C8.2733 19.5944 8.40489 19.6754 8.40489 19.7918ZM6.83093 19.564C6.79551 19.6652 6.89673 19.7816 7.04855 19.812C7.18014 19.8626 7.33197 19.812 7.36233 19.7108C7.3927 19.6096 7.29654 19.4932 7.14471 19.4476C7.01313 19.4122 6.86636 19.4628 6.83093 19.564ZM9.06787 19.478C8.9211 19.5134 8.81988 19.6096 8.83507 19.726C8.85025 19.8272 8.98183 19.893 9.13366 19.8576C9.28043 19.8221 9.38165 19.726 9.36646 19.6248C9.35128 19.5286 9.21464 19.4628 9.06787 19.478ZM12.398 0.0844727C5.37844 0.0844727 0.00878906 5.41364 0.00878906 12.4332C0.00878906 18.0457 3.54132 22.8486 8.58708 24.5389C9.23488 24.6553 9.46262 24.2555 9.46262 23.9266C9.46262 23.6128 9.44744 21.8819 9.44744 20.8191C9.44744 20.8191 5.90478 21.5783 5.16082 19.311C5.16082 19.311 4.58388 17.8382 3.75388 17.4587C3.75388 17.4587 2.59493 16.6641 3.83486 16.6793C3.83486 16.6793 5.09503 16.7805 5.78838 17.985C6.89673 19.9385 8.75409 19.3768 9.47781 19.0427C9.59421 18.233 9.92317 17.6712 10.2876 17.3372C7.45849 17.0234 4.60412 16.6135 4.60412 11.7449C4.60412 10.3531 4.98875 9.65471 5.7985 8.76398C5.66692 8.43502 5.23674 7.07869 5.93009 5.32761C6.98782 4.99864 9.42213 6.69406 9.42213 6.69406C10.4343 6.41065 11.5224 6.26388 12.6004 6.26388C13.6784 6.26388 14.7665 6.41065 15.7787 6.69406C15.7787 6.69406 18.213 4.99358 19.2707 5.32761C19.9641 7.08375 19.5339 8.43502 19.4023 8.76398C20.2121 9.65977 20.708 10.3582 20.708 11.7449C20.708 16.6287 17.7271 17.0184 14.8981 17.3372C15.3637 17.737 15.7584 18.4962 15.7584 19.6855C15.7584 21.391 15.7432 23.5014 15.7432 23.9164C15.7432 24.2454 15.9761 24.6452 16.6188 24.5288C21.6797 22.8486 25.111 18.0457 25.111 12.4332C25.111 5.41364 19.4175 0.0844727 12.398 0.0844727ZM4.92802 17.5397C4.86223 17.5903 4.87741 17.7067 4.96345 17.8028C5.04442 17.8838 5.16082 17.9192 5.22662 17.8534C5.29241 17.8028 5.27723 17.6864 5.19119 17.5903C5.11022 17.5093 4.99381 17.4739 4.92802 17.5397ZM4.38144 17.1297C4.34601 17.1955 4.39662 17.2765 4.49784 17.3271C4.57882 17.3777 4.68004 17.3625 4.71546 17.2917C4.75089 17.2259 4.70028 17.1449 4.59906 17.0943C4.49784 17.0639 4.41687 17.0791 4.38144 17.1297ZM6.02118 18.9314C5.94021 18.9972 5.97057 19.149 6.08698 19.2452C6.20338 19.3616 6.35014 19.3768 6.41594 19.2958C6.48173 19.23 6.45136 19.0782 6.35014 18.982C6.2388 18.8656 6.08698 18.8504 6.02118 18.9314ZM5.44424 18.1875C5.36326 18.2381 5.36326 18.3696 5.44424 18.486C5.52521 18.6024 5.66186 18.6531 5.72765 18.6024C5.80862 18.5367 5.80862 18.4051 5.72765 18.2887C5.6568 18.1723 5.52521 18.1217 5.44424 18.1875Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio-card col-span-12 lg:col-span-9 rounded-lg">
+            <img
+              src="images/portfolio/wetrek.jpeg"
+              alt=""
+              class="portfolio-image"
+            />
+            <div class="overlay">
+              <div class="portfolio-details">
+                <h3 class="portfolio-title">Logistics App Project</h3>
+                <div class="pills-row flex mt-2 lg:mt-4">
+                  <div class="pill">Flutter</div>
+                  <div class="pill">Laravel</div>
+                  <div class="pill">PHP</div>
+                  <div class="pill">Dart</div>
+                </div>
+              </div>
+              <a class="rounded-full border open-icon magnetic" href="#">
+                <svg
+                  viewBox="0 0 26 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.40489 19.7918C8.40489 19.893 8.28848 19.974 8.14172 19.974C7.97471 19.9891 7.8583 19.9082 7.8583 19.7918C7.8583 19.6905 7.97471 19.6096 8.12147 19.6096C8.2733 19.5944 8.40489 19.6754 8.40489 19.7918ZM6.83093 19.564C6.79551 19.6652 6.89673 19.7816 7.04855 19.812C7.18014 19.8626 7.33197 19.812 7.36233 19.7108C7.3927 19.6096 7.29654 19.4932 7.14471 19.4476C7.01313 19.4122 6.86636 19.4628 6.83093 19.564ZM9.06787 19.478C8.9211 19.5134 8.81988 19.6096 8.83507 19.726C8.85025 19.8272 8.98183 19.893 9.13366 19.8576C9.28043 19.8221 9.38165 19.726 9.36646 19.6248C9.35128 19.5286 9.21464 19.4628 9.06787 19.478ZM12.398 0.0844727C5.37844 0.0844727 0.00878906 5.41364 0.00878906 12.4332C0.00878906 18.0457 3.54132 22.8486 8.58708 24.5389C9.23488 24.6553 9.46262 24.2555 9.46262 23.9266C9.46262 23.6128 9.44744 21.8819 9.44744 20.8191C9.44744 20.8191 5.90478 21.5783 5.16082 19.311C5.16082 19.311 4.58388 17.8382 3.75388 17.4587C3.75388 17.4587 2.59493 16.6641 3.83486 16.6793C3.83486 16.6793 5.09503 16.7805 5.78838 17.985C6.89673 19.9385 8.75409 19.3768 9.47781 19.0427C9.59421 18.233 9.92317 17.6712 10.2876 17.3372C7.45849 17.0234 4.60412 16.6135 4.60412 11.7449C4.60412 10.3531 4.98875 9.65471 5.7985 8.76398C5.66692 8.43502 5.23674 7.07869 5.93009 5.32761C6.98782 4.99864 9.42213 6.69406 9.42213 6.69406C10.4343 6.41065 11.5224 6.26388 12.6004 6.26388C13.6784 6.26388 14.7665 6.41065 15.7787 6.69406C15.7787 6.69406 18.213 4.99358 19.2707 5.32761C19.9641 7.08375 19.5339 8.43502 19.4023 8.76398C20.2121 9.65977 20.708 10.3582 20.708 11.7449C20.708 16.6287 17.7271 17.0184 14.8981 17.3372C15.3637 17.737 15.7584 18.4962 15.7584 19.6855C15.7584 21.391 15.7432 23.5014 15.7432 23.9164C15.7432 24.2454 15.9761 24.6452 16.6188 24.5288C21.6797 22.8486 25.111 18.0457 25.111 12.4332C25.111 5.41364 19.4175 0.0844727 12.398 0.0844727ZM4.92802 17.5397C4.86223 17.5903 4.87741 17.7067 4.96345 17.8028C5.04442 17.8838 5.16082 17.9192 5.22662 17.8534C5.29241 17.8028 5.27723 17.6864 5.19119 17.5903C5.11022 17.5093 4.99381 17.4739 4.92802 17.5397ZM4.38144 17.1297C4.34601 17.1955 4.39662 17.2765 4.49784 17.3271C4.57882 17.3777 4.68004 17.3625 4.71546 17.2917C4.75089 17.2259 4.70028 17.1449 4.59906 17.0943C4.49784 17.0639 4.41687 17.0791 4.38144 17.1297ZM6.02118 18.9314C5.94021 18.9972 5.97057 19.149 6.08698 19.2452C6.20338 19.3616 6.35014 19.3768 6.41594 19.2958C6.48173 19.23 6.45136 19.0782 6.35014 18.982C6.2388 18.8656 6.08698 18.8504 6.02118 18.9314ZM5.44424 18.1875C5.36326 18.2381 5.36326 18.3696 5.44424 18.486C5.52521 18.6024 5.66186 18.6531 5.72765 18.6024C5.80862 18.5367 5.80862 18.4051 5.72765 18.2887C5.6568 18.1723 5.52521 18.1217 5.44424 18.1875Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="portfolio-card col-span-12 lg:col-span-9 rounded-lg">
+            <img
+              src="images/portfolio/wetrek.jpeg"
+              alt=""
+              class="portfolio-image"
+            />
+            <div class="overlay">
+              <div class="portfolio-details">
+                <h3 class="portfolio-title">Logistics App Project</h3>
+                <div class="pills-row flex mt-2 lg:mt-4">
+                  <div class="pill">Flutter</div>
+                  <div class="pill">Laravel</div>
+                  <div class="pill">PHP</div>
+                  <div class="pill">Dart</div>
+                </div>
+              </div>
+              <a class="rounded-full border open-icon magnetic" href="#">
+                <svg
+                  viewBox="0 0 26 25"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M8.40489 19.7918C8.40489 19.893 8.28848 19.974 8.14172 19.974C7.97471 19.9891 7.8583 19.9082 7.8583 19.7918C7.8583 19.6905 7.97471 19.6096 8.12147 19.6096C8.2733 19.5944 8.40489 19.6754 8.40489 19.7918ZM6.83093 19.564C6.79551 19.6652 6.89673 19.7816 7.04855 19.812C7.18014 19.8626 7.33197 19.812 7.36233 19.7108C7.3927 19.6096 7.29654 19.4932 7.14471 19.4476C7.01313 19.4122 6.86636 19.4628 6.83093 19.564ZM9.06787 19.478C8.9211 19.5134 8.81988 19.6096 8.83507 19.726C8.85025 19.8272 8.98183 19.893 9.13366 19.8576C9.28043 19.8221 9.38165 19.726 9.36646 19.6248C9.35128 19.5286 9.21464 19.4628 9.06787 19.478ZM12.398 0.0844727C5.37844 0.0844727 0.00878906 5.41364 0.00878906 12.4332C0.00878906 18.0457 3.54132 22.8486 8.58708 24.5389C9.23488 24.6553 9.46262 24.2555 9.46262 23.9266C9.46262 23.6128 9.44744 21.8819 9.44744 20.8191C9.44744 20.8191 5.90478 21.5783 5.16082 19.311C5.16082 19.311 4.58388 17.8382 3.75388 17.4587C3.75388 17.4587 2.59493 16.6641 3.83486 16.6793C3.83486 16.6793 5.09503 16.7805 5.78838 17.985C6.89673 19.9385 8.75409 19.3768 9.47781 19.0427C9.59421 18.233 9.92317 17.6712 10.2876 17.3372C7.45849 17.0234 4.60412 16.6135 4.60412 11.7449C4.60412 10.3531 4.98875 9.65471 5.7985 8.76398C5.66692 8.43502 5.23674 7.07869 5.93009 5.32761C6.98782 4.99864 9.42213 6.69406 9.42213 6.69406C10.4343 6.41065 11.5224 6.26388 12.6004 6.26388C13.6784 6.26388 14.7665 6.41065 15.7787 6.69406C15.7787 6.69406 18.213 4.99358 19.2707 5.32761C19.9641 7.08375 19.5339 8.43502 19.4023 8.76398C20.2121 9.65977 20.708 10.3582 20.708 11.7449C20.708 16.6287 17.7271 17.0184 14.8981 17.3372C15.3637 17.737 15.7584 18.4962 15.7584 19.6855C15.7584 21.391 15.7432 23.5014 15.7432 23.9164C15.7432 24.2454 15.9761 24.6452 16.6188 24.5288C21.6797 22.8486 25.111 18.0457 25.111 12.4332C25.111 5.41364 19.4175 0.0844727 12.398 0.0844727ZM4.92802 17.5397C4.86223 17.5903 4.87741 17.7067 4.96345 17.8028C5.04442 17.8838 5.16082 17.9192 5.22662 17.8534C5.29241 17.8028 5.27723 17.6864 5.19119 17.5903C5.11022 17.5093 4.99381 17.4739 4.92802 17.5397ZM4.38144 17.1297C4.34601 17.1955 4.39662 17.2765 4.49784 17.3271C4.57882 17.3777 4.68004 17.3625 4.71546 17.2917C4.75089 17.2259 4.70028 17.1449 4.59906 17.0943C4.49784 17.0639 4.41687 17.0791 4.38144 17.1297ZM6.02118 18.9314C5.94021 18.9972 5.97057 19.149 6.08698 19.2452C6.20338 19.3616 6.35014 19.3768 6.41594 19.2958C6.48173 19.23 6.45136 19.0782 6.35014 18.982C6.2388 18.8656 6.08698 18.8504 6.02118 18.9314ZM5.44424 18.1875C5.36326 18.2381 5.36326 18.3696 5.44424 18.486C5.52521 18.6024 5.66186 18.6531 5.72765 18.6024C5.80862 18.5367 5.80862 18.4051 5.72765 18.2887C5.6568 18.1723 5.52521 18.1217 5.44424 18.1875Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="footer relative">
+        <div class="grid grid-cols-12 items-start">
+          <div
+            class="col-span-9 navigation hidden lg:flex lg:flex-1 lg:justify-start lg:gap-x-24 mt-4 lg:mt-12"
+          >
+            <a href="#" class="magnetic">Home</a>
+            <a href="#" class="magnetic">About</a>
+            <a href="#" class="magnetic">Portfolio</a>
+          </div>
+          <div class="col-span-3">
+            <img
+              src="images/eesbaytrans3.png"
+              class="w-full footer-image mx-4"
+              alt=""
+              srcset=""
+            />
+          </div>
+        </div>
+        <h1 class="contact-text">
+          <a href="mailto:ekenemadunagu@gmail.com" class="inline-block style-underlined button-cursor">
+            Let's Work Together?
+          </a>
+        </h1>
+        <div class="cta w-fit mt-4 lg:mt-12">Start a Conversation</div>
+        <div class="grid grid-cols-12">
+          <div class="col-span-9"></div>
+          <div class="col-span-3 mx-4">
+            <div class="label just-legible">Location</div>
+            <div class="info">Lagos, Nigeria</div>
+          </div>
+        </div>
+
+        <div class="socials flex focus-cursor gap-x-8">
+          <!-- Github -->
+          <a
+            href="https://github.com/madunagu"
+            target="_blank"
+            class="rounded-full magnetic"
+          >
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 26 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.40489 19.7918C8.40489 19.893 8.28848 19.974 8.14172 19.974C7.97471 19.9891 7.8583 19.9082 7.8583 19.7918C7.8583 19.6905 7.97471 19.6096 8.12147 19.6096C8.2733 19.5944 8.40489 19.6754 8.40489 19.7918ZM6.83093 19.564C6.79551 19.6652 6.89673 19.7816 7.04855 19.812C7.18014 19.8626 7.33197 19.812 7.36233 19.7108C7.3927 19.6096 7.29654 19.4932 7.14471 19.4476C7.01313 19.4122 6.86636 19.4628 6.83093 19.564ZM9.06787 19.478C8.9211 19.5134 8.81988 19.6096 8.83507 19.726C8.85025 19.8272 8.98183 19.893 9.13366 19.8576C9.28043 19.8221 9.38165 19.726 9.36646 19.6248C9.35128 19.5286 9.21464 19.4628 9.06787 19.478ZM12.398 0.0844727C5.37844 0.0844727 0.00878906 5.41364 0.00878906 12.4332C0.00878906 18.0457 3.54132 22.8486 8.58708 24.5389C9.23488 24.6553 9.46262 24.2555 9.46262 23.9266C9.46262 23.6128 9.44744 21.8819 9.44744 20.8191C9.44744 20.8191 5.90478 21.5783 5.16082 19.311C5.16082 19.311 4.58388 17.8382 3.75388 17.4587C3.75388 17.4587 2.59493 16.6641 3.83486 16.6793C3.83486 16.6793 5.09503 16.7805 5.78838 17.985C6.89673 19.9385 8.75409 19.3768 9.47781 19.0427C9.59421 18.233 9.92317 17.6712 10.2876 17.3372C7.45849 17.0234 4.60412 16.6135 4.60412 11.7449C4.60412 10.3531 4.98875 9.65471 5.7985 8.76398C5.66692 8.43502 5.23674 7.07869 5.93009 5.32761C6.98782 4.99864 9.42213 6.69406 9.42213 6.69406C10.4343 6.41065 11.5224 6.26388 12.6004 6.26388C13.6784 6.26388 14.7665 6.41065 15.7787 6.69406C15.7787 6.69406 18.213 4.99358 19.2707 5.32761C19.9641 7.08375 19.5339 8.43502 19.4023 8.76398C20.2121 9.65977 20.708 10.3582 20.708 11.7449C20.708 16.6287 17.7271 17.0184 14.8981 17.3372C15.3637 17.737 15.7584 18.4962 15.7584 19.6855C15.7584 21.391 15.7432 23.5014 15.7432 23.9164C15.7432 24.2454 15.9761 24.6452 16.6188 24.5288C21.6797 22.8486 25.111 18.0457 25.111 12.4332C25.111 5.41364 19.4175 0.0844727 12.398 0.0844727ZM4.92802 17.5397C4.86223 17.5903 4.87741 17.7067 4.96345 17.8028C5.04442 17.8838 5.16082 17.9192 5.22662 17.8534C5.29241 17.8028 5.27723 17.6864 5.19119 17.5903C5.11022 17.5093 4.99381 17.4739 4.92802 17.5397ZM4.38144 17.1297C4.34601 17.1955 4.39662 17.2765 4.49784 17.3271C4.57882 17.3777 4.68004 17.3625 4.71546 17.2917C4.75089 17.2259 4.70028 17.1449 4.59906 17.0943C4.49784 17.0639 4.41687 17.0791 4.38144 17.1297ZM6.02118 18.9314C5.94021 18.9972 5.97057 19.149 6.08698 19.2452C6.20338 19.3616 6.35014 19.3768 6.41594 19.2958C6.48173 19.23 6.45136 19.0782 6.35014 18.982C6.2388 18.8656 6.08698 18.8504 6.02118 18.9314ZM5.44424 18.1875C5.36326 18.2381 5.36326 18.3696 5.44424 18.486C5.52521 18.6024 5.66186 18.6531 5.72765 18.6024C5.80862 18.5367 5.80862 18.4051 5.72765 18.2887C5.6568 18.1723 5.52521 18.1217 5.44424 18.1875Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+
+          <!-- Linkedin -->
+          <a
+            href="https://linkedin.com/in/madunagu"
+            target="_blank"
+            class="rounded-full magnetic"
+          >
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 26 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.5449 0.759766C14.2844 0.759766 15.9139 1.08966 17.4334 1.74946C18.9529 2.40926 20.2825 3.30398 21.4222 4.43363C22.5618 5.56328 23.4616 6.88787 24.1213 8.40741C24.7811 9.92694 25.111 11.5564 25.111 13.2959C25.111 15.0354 24.7811 16.6649 24.1213 18.1844C23.4616 19.7039 22.5618 21.0335 21.4222 22.1732C20.2825 23.3128 18.9529 24.2125 17.4334 24.8723C15.9139 25.5321 14.2844 25.862 12.5449 25.862C10.8055 25.862 9.17596 25.5321 7.65643 24.8723C6.1369 24.2125 4.81231 23.3128 3.68266 22.1732C2.553 21.0335 1.65828 19.7039 0.998484 18.1844C0.338687 16.6649 0.00878906 15.0354 0.00878906 13.2959C0.00878906 11.5564 0.338687 9.92694 0.998484 8.40741C1.65828 6.88787 2.553 5.56328 3.68266 4.43363C4.81231 3.30398 6.1369 2.40926 7.65643 1.74946C9.17596 1.08966 10.8055 0.759766 12.5449 0.759766ZM8.64612 10.1769H5.4971V20.3737H8.64612V10.1769ZM7.05661 9.36711C7.49648 9.36711 7.87136 9.21716 8.18127 8.91725C8.49117 8.61734 8.64612 8.24746 8.64612 7.80759C8.64612 7.36773 8.49117 6.99784 8.18127 6.69793C7.87136 6.39803 7.49648 6.24807 7.05661 6.24807C6.61675 6.24807 6.24686 6.39803 5.94696 6.69793C5.64705 6.99784 5.4971 7.36773 5.4971 7.80759C5.4971 8.24746 5.64705 8.61734 5.94696 8.91725C6.24686 9.21716 6.61675 9.36711 7.05661 9.36711ZM19.6227 14.4655C19.6227 13.7458 19.4228 13.041 19.0229 12.3512C18.623 11.6614 18.1032 11.1366 17.4634 10.7767C16.8836 10.4568 16.2088 10.2868 15.439 10.2668C14.6693 10.2468 13.9645 10.3768 13.3247 10.6567V10.1769H10.2056V20.3737H13.3247V14.1356L14.6443 13.5058C14.8042 13.4259 15.0192 13.3859 15.2891 13.3859C15.559 13.3859 15.7739 13.4359 15.9339 13.5358C16.0538 13.5958 16.1738 13.7258 16.2938 13.9257C16.4137 14.1256 16.4737 14.3056 16.4737 14.4655V20.3737H19.6227V14.4655Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+          <!-- Telegram -->
+          <a
+            href="https://t.me/madunagu"
+            target="_blank"
+            class="rounded-full magnetic"
+          >
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 26 26"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12.5511 0C5.61724 0 0 5.61805 0 12.5511C0 19.4842 5.61805 25.1023 12.5511 25.1023C19.485 25.1023 25.1023 19.4842 25.1023 12.5511C25.1023 5.61805 19.4842 0 12.5511 0ZM18.7158 8.59874L16.6558 18.306C16.5035 18.9943 16.0938 19.1611 15.5221 18.8372L12.3843 16.5246L10.8709 17.9821C10.7041 18.1489 10.5624 18.2906 10.2385 18.2906L10.4612 15.097L16.276 9.84332C16.5294 9.62064 16.2201 9.49432 15.8857 9.717L8.69915 14.2411L5.60185 13.2742C4.92895 13.0621 4.91356 12.6013 5.74356 12.2774L17.8445 7.61084C18.4064 7.4084 18.8971 7.74769 18.7149 8.59793L18.7158 8.59874Z"
+                fill="currentColor"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="credits flex gap-x-24">
+          <div class="just-legible">
+            Ekene Madunagu&copy; all rights reserved
+          </div>
+          <div class="just-legible">Audio by godfabb</div>
+        </div>
+      </section>
+    </div>
+    <div class="blur-overlay fixed">
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+    </div>
+    <div class="moving-along" id="cursor"></div>
+    <div class="moving-along" id="hand">
+      <svg
+        fill="currentColor"
+        version="1.1"
+        id="Capa_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 203.079 203.079"
+        xml:space="preserve"
+      >
+        <path
+          d="M192.231,104.082V102c0-12.407-10.094-22.5-22.5-22.5c-2.802,0-5.484,0.519-7.961,1.459
+C159.665,70.722,150.583,63,139.731,63c-2.947,0-5.76,0.575-8.341,1.61C128.667,55.162,119.624,48,109.231,48
+c-2.798,0-5.496,0.541-8,1.516V22.5c0-12.407-10.094-22.5-22.5-22.5s-22.5,10.093-22.5,22.5v66.259
+c-3.938-5.029-8.673-9.412-14.169-11.671c-6.133-2.52-12.587-2.219-18.667,0.872c-11.182,5.686-15.792,19.389-10.277,30.548
+l27.95,56.563c0.79,1.552,19.731,38.008,54.023,38.008h40c31.54,0,57.199-25.794,57.199-57.506l-0.031-41.491H192.231z
+ M135.092,188.079h-40c-24.702,0-40.091-28.738-40.646-29.796l-27.88-56.42c-1.924-3.893-0.33-8.519,3.629-10.532
+c2.182-1.11,4.081-1.223,6.158-0.372c8.281,3.395,16.41,19.756,19.586,29.265l2.41,7.259l12.883-4.559V22.5
+c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5V109h0.136h14.864h0.136V71c0-4.187,3.748-8,7.864-8c4.262,0,8,3.505,8,7.5v15v26h15
+v-26c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5V102v16.5h15V102c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5v10.727h0.035
+l0.025,32.852C177.291,169.014,158.36,188.079,135.092,188.079z"
+        />
+      </svg>
+    </div>
+    <!-- <div class="spinner">
+      <div class="play">
+        <svg viewBox="0 0 10 12" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1.71779 11.1732C1.51503 11.1732 1.31228 11.1207 1.12648 11.0148C0.941947 10.9114 0.788513 10.7605 0.682179 10.5776C0.575845 10.3948 0.520506 10.1868 0.521931 9.97532V2.02428C0.521931 1.58856 0.747862 1.20001 1.12648 0.984835C1.50469 0.769249 1.95407 0.773801 2.32855 0.996835L9.008 4.97256C9.37338 5.19021 9.59186 5.57421 9.59186 6.00001C9.59186 6.4258 9.37338 6.8098 9.008 7.02746L2.32897 11.0032C2.14432 11.114 1.93313 11.1727 1.71779 11.1732ZM1.71945 1.65518C1.65489 1.65575 1.59153 1.67269 1.53531 1.70442C1.47831 1.73599 1.43091 1.78238 1.39813 1.83869C1.36535 1.895 1.34841 1.95913 1.3491 2.02428V9.97573C1.3491 10.169 1.47903 10.2637 1.53531 10.2956C1.59163 10.3285 1.65579 10.3455 1.721 10.3448C1.7862 10.3441 1.85001 10.3259 1.90565 10.2919L8.58469 6.31615C8.7469 6.21973 8.76469 6.0629 8.76469 6.00001C8.76469 5.93711 8.74731 5.78028 8.58469 5.68387L1.90524 1.70815C1.8494 1.67366 1.78508 1.65532 1.71945 1.65518Z"
+            fill="black"
+          />
+        </svg>
+      </div>
+    </div> -->
+    <script src="dist/main.js"></script>
+  </body>
+</html>
