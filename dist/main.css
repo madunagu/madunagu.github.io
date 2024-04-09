@@ -467,7 +467,7 @@ body::before {
   --x: 50%;
   --y: 50%;
   --w: 4rem;
-  opacity: 0.8;
+  opacity: 0.55;
   width: 100vw;
   height: 100vh;
   top: 0;

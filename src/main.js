@@ -176,7 +176,6 @@ let scrollTween = gsap.to(portfolioCards, {
     trigger: '.custom-scroll',
     pin: true,
     scrub: 1,
-    markers: true,
     // start: "top 40%",
     end: "+=3000"
   }
@@ -195,12 +194,10 @@ let scrollTween = gsap.to(portfolioCards, {
 let skillSliderTween = gsap.to(skillSlider, {
   ease: 'none',
   marginLeft: '-100%',
-  // markers: true,
   scrollTrigger: {
     trigger: '#skill-slider',
     // pin: true,
     scrub: 1,
-    // markers: true,
     start: "top 90%",
     // end: "+=3000"
   }
@@ -216,7 +213,6 @@ let skillSliderTween = gsap.to(skillSlider, {
 //       start: 'top 64%',
 //       end: 'top 20%',
 //       scrub: true,
-//       // markers: true
 //     },
 //     opacity: 0.2,
 //     stagger: 0.1,
@@ -235,7 +231,6 @@ const rotateCard = (e) => {
       start: 'top 64%',
       end: 'top 20%',
       scrub: true,
-      // markers: true
     },
     opacity: 0.2,
     // stagger: 0.1,
@@ -250,7 +245,6 @@ const deRotateCard = (char, i) => {
       start: 'top 64%',
       end: 'top 20%',
       scrub: true,
-      // markers: true
     },
     opacity: 0.2,
     stagger: 0.1,
