@@ -315,7 +315,9 @@ section {
   overflow: hidden;
   font-weight: 300;
   height: 60vh;
+  height: clamp(30rem, 60vh, 88rem);
   width: 60vw;
+  width: clamp(22rem, 60vw, 88rem);
   flex-shrink: 0;
   margin-right: 4vw;
   margin: auto 4vw;
@@ -332,7 +334,6 @@ section {
 .portfolio .portfolio-card .overlay {
   border-radius: 12px;
   position: absolute;
-  display: flex;
   top: 0px;
   opacity: 0;
   background: rgba(0, 0, 0, 0.2509803922);
@@ -340,14 +341,14 @@ section {
   height: 100%;
   width: 100%;
   cursor: pointer;
-  padding: 6vh 3vw;
+  padding: 6vh 6vw;
   border: 0.5px solid #ffffff;
 }
 .portfolio .portfolio-card .portfolio-details {
   flex: 1;
 }
 .portfolio .portfolio-card .open-icon {
-  --size: clamp(1.8rem, -0.24rem + 3vw, 4.8rem);
+  --size: clamp(2.8rem, -0.24rem + 3vw, 4.8rem);
   width: var(--size);
   height: var(--size);
   display: flex;
@@ -356,6 +357,7 @@ section {
 }
 .portfolio .portfolio-card .pills-row {
   gap: 0.4rem;
+  flex-wrap: wrap;
 }
 .portfolio .portfolio-card .pills-row .pill {
   font-family: "alata";
@@ -364,14 +366,13 @@ section {
   border-radius: 14rem;
   padding: 0.2rem 1rem;
   font-size: 0.9rem;
-  font-size: clamp(0.4rem, -0.2rem + 1.2vw, 2.2rem);
 }
 .portfolio .portfolio-card:hover .overlay {
   top: 0px;
   opacity: 1;
 }
 .portfolio .portfolio-title {
-  font-size: clamp(1rem, 1rem + 1.5vw, 4rem);
+  font-size: clamp(1.6rem, 1rem + 1.5vw, 4rem);
   font-weight: 700;
   text-transform: uppercase;
 }

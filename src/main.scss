@@ -357,8 +357,10 @@ section {
     font-weight: 300;
     // text-transform: uppercase;
     height: 60vh;
+    height: clamp(30rem,60vh,88rem);
     // height: calc(max(36vw, 36vh));
     width: 60vw;
+    width: clamp(22rem,60vw,88rem);
     flex-shrink: 0;
     margin-right: 4vw;
     margin: auto 4vw;
@@ -376,7 +378,7 @@ section {
     .overlay {
       border-radius: 12px;
       position: absolute;
-      display: flex;
+      // display: flex;
       top: 0px;
       opacity: 0;
       background: #00000040;
@@ -384,7 +386,7 @@ section {
       height: 100%;
       width: 100%;
       cursor: pointer;
-      padding: 6vh 3vw;
+      padding: 6vh 6vw;
       border: 0.5px solid #ffffff;
       // transition: all 0.4s ease-out;
       // transition-timing-function: cubic-bezier(0.39, 0.58, 0.57, 1);
@@ -393,7 +395,7 @@ section {
       flex: 1;
     }
     .open-icon {
-      --size: clamp(1.8rem, -0.24rem + 3vw, 4.8rem);
+      --size: clamp(2.8rem, -0.24rem + 3vw, 4.8rem);
       width: var(--size);
       height: var(--size);
       display: flex;
@@ -402,6 +404,7 @@ section {
     }
     .pills-row {
       gap: 0.4rem;
+      flex-wrap: wrap;
       .pill {
         font-family: "alata";
         text-transform: uppercase;
@@ -409,7 +412,7 @@ section {
         border-radius: 14rem;
         padding: 0.2rem 1rem;
         font-size: 0.9rem;
-        font-size: clamp(0.4rem, -0.2rem + 1.2vw, 2.2rem);
+        // font-size: clamp(0.4rem, -0.2rem + 1.2vw, 2.2rem);
       }
     }
     &:hover {
@@ -421,7 +424,7 @@ section {
   }
 
   .portfolio-title {
-    font-size: clamp(1rem, 1rem + 1.5vw, 4rem);
+    font-size: clamp(1.6rem, 1rem + 1.5vw, 4rem);
     font-weight: 700;
     text-transform: uppercase;
   }
