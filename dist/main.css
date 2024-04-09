@@ -1,4 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Alata&family=Biryani:wght@200;300;400;600;700;800;900&display=swap");
+@keyframes bounce {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  40% {
+    transform: scale(1.2) rotate(15deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
 body {
   font-family: "Biryani";
   --font-color: #000;
@@ -175,7 +186,13 @@ section {
   font-size: 1.6rem;
   font-size: clamp(1rem, 0.6rem + 2vw, 2rem);
 }
-.expertise .img-cont {
+.expertise .expertise-item:hover .img-cont img,
+.expertise .expertise-item:hover .img-cont svg {
+  filter: none;
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+.expertise .expertise-item .img-cont {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.2117647059);
   background: rgba(0, 0, 0, 0.1411764706);
@@ -185,15 +202,13 @@ section {
   border-radius: 0.4rem;
   border-radius: 4px;
 }
-.expertise .img-cont:hover img,
-.expertise .img-cont:hover svg {
-  filter: none;
-}
-.expertise .img-cont img,
-.expertise .img-cont svg {
+.expertise .expertise-item img,
+.expertise .expertise-item svg {
   width: 40%;
   margin: auto;
   filter: grayscale(1);
+  animation-duration: 2.4s;
+  animation-iteration-count: infinite;
 }
 .expertise .desc {
   opacity: 0.74;
@@ -245,8 +260,6 @@ section {
 }
 .portfolio .portfolio-card {
   overflow: hidden;
-  background-color: #0000ff;
-  background: url(../images/portfolio/wetrek.jpeg);
   backdrop-filter: blur(4px);
   background-size: cover;
   font-weight: 300;
@@ -263,8 +276,9 @@ section {
 .portfolio .portfolio-card .overlay {
   border-radius: 12px;
   position: absolute;
-  top: -50%;
-  background: rgba(0, 0, 0, 0.2509803922);
+  display: flex;
+  top: -100%;
+  background: rgba(0, 0, 0, 0.3764705882);
   background: linear-gradient(rgba(0, 0, 0, 0.5019607843), rgba(0, 0, 0, 0));
   height: 100%;
   width: 100%;
@@ -272,21 +286,15 @@ section {
   transition: top 0.4s ease-in;
   transition-timing-function: cubic-bezier(0.39, 0.58, 0.57, 1);
 }
-.portfolio .portfolio-card .open-links {
-  position: relative;
-  bottom: 0px;
-  height: 4rem;
+.portfolio .portfolio-card .portfolio-details {
+  flex: 1;
 }
-.portfolio .portfolio-card .open-links .open-icon {
-  width: 4rem;
-  height: 4rem;
+.portfolio .portfolio-card .open-icon {
+  width: 2.4rem;
+  height: 2.4rem;
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-.portfolio .portfolio-card .open-links .open-icon svg {
-  width: 1.6rem;
-  height: 1.6rem;
+  padding: 0.2rem;
 }
 .portfolio .portfolio-card .pills-row {
   gap: 0.4rem;
@@ -302,20 +310,31 @@ section {
 .portfolio .portfolio-card:hover .overlay {
   top: 0px;
 }
-.portfolio .portfolio-card:nth-child(2) {
-  background: url(../images/portfolio/qwestionone.png);
-}
 .portfolio .portfolio-title {
   font-size: clamp(1rem, 1rem + 1.5vw, 4rem);
   text-transform: uppercase;
 }
 
 .custom-scroll {
-  --cal: calc(8.3333333333% - 1px);
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(to bottom, rgba(245, 242, 235, 0) 0 var(--cal), #f5f2eb var(--cal) calc(var(--cal) + 1px));
-  --to-opacity: 0.2;
+}
+
+.custom-scroll::before {
+  --cal: calc(8.3333333333% - 1px);
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: repeating-linear-gradient(to bottom, rgba(245, 242, 235, 0) 0 var(--cal), #6e6e6e var(--cal) calc(var(--cal) + 1px));
+  --to-opacity: 0.4;
+  opacity: var(--to-opacity);
 }
 
 .footer {
@@ -383,7 +402,8 @@ body::before {
   height: 100vh;
   position: fixed;
   top: 0;
-  z-index: -1;
+  z-index: 99;
+  pointer-events: none;
   clip-path: circle(var(--w) at var(--x) var(--y));
 }
 
