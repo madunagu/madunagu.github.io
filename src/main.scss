@@ -143,7 +143,7 @@ section {
 
     .banner-text {
       font-size: 6rem;
-      font-size: clamp(3rem, 0.6rem + 6vw, 10rem);
+      font-size: clamp(2.2rem, 0.6rem + 5.5vw, 10rem);
       line-height: 6.2rem;
       font-weight: 500;
       display: inline-block;
@@ -182,7 +182,7 @@ section {
 
     .banner-tagline {
       font-size: 3.625rem;
-      font-size: clamp(1.8rem, 0.6rem + 3vw, 4.8rem);
+      font-size: clamp(1.8rem, 0.6rem + 2.5vw, 4.8rem);
       opacity: 0.8;
     }
     .display {
@@ -284,7 +284,7 @@ section {
     svg {
       width: 40%;
       margin: auto;
-      filter: grayscale(1);
+      // filter: grayscale(1);
       // transition: all 0.8s ease-out;
       animation-duration: 2.4s;
       animation-iteration-count: infinite;
@@ -322,11 +322,15 @@ section {
   z-index: 5;
   position: relative;
   // background: #ffffff18;
-  box-shadow: 0px 0px 7px 2px rgba(200, 200, 200, 0.28);
+  // box-shadow: 0px 0px 7px 2px rgba(200, 200, 200, 0.28);
 
+  min-height: 100vh;
   border-radius: 4rem;
+  display: grid;
+  place-content: center;
   .body-text-large {
-    font-size: clamp(1.2rem, 0.6rem + 2vw, 3rem);
+    // font-size: clamp(1.2rem, 0.6rem + 2vw, 3rem);
+    line-height: 1.1;
     opacity: 0.8;
   }
   .text-right {
@@ -348,33 +352,47 @@ section {
     height: 100vh;
     position: relative;
   }
+  .spacer {
+    width: 32%;
+    flex-shrink: 0;
+  }
   .portfolio-card {
     // background: linear-gradient(black, grey);
     overflow: hidden;
-    // background-color: #0000ff;
     // backdrop-filter: blur(4px);
     // background-size: cover;
     font-weight: 300;
     // text-transform: uppercase;
     height: 60vh;
-    height: clamp(30rem,60vh,88rem);
+    height: clamp(30rem, 60vh, 88rem);
     // height: calc(max(36vw, 36vh));
     width: 60vw;
-    width: clamp(22rem,60vw,88rem);
+    width: clamp(22rem, 60vw, 88rem);
     flex-shrink: 0;
     margin-right: 4vw;
     margin: auto 4vw;
     position: relative;
     cursor: none;
 
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+    transform: translate3d(0, 0, 0);
+    transform: translateZ(0);
+    
     .portfolio-image {
       object-fit: cover;
       border-radius: 12px;
       scale: 1;
+      background-color: #7c7c7c;
       height: 100%;
       width: 100%;
       // transition: all 0.4s ease-out;
     }
+
     .overlay {
       border-radius: 12px;
       position: absolute;
@@ -391,9 +409,11 @@ section {
       // transition: all 0.4s ease-out;
       // transition-timing-function: cubic-bezier(0.39, 0.58, 0.57, 1);
     }
+
     .portfolio-details {
       flex: 1;
     }
+
     .open-icon {
       --size: clamp(2.8rem, -0.24rem + 3vw, 4.8rem);
       width: var(--size);
@@ -504,8 +524,9 @@ section {
   .label {
   }
   .credits {
-    bottom: 44px;
-    position: absolute;
+    // bottom: 44px;
+    // position: absolute;
+    padding: 6vh 0px;
   }
   .socials {
     padding-top: min(5rem, calc(100vh / 24 * 4));
@@ -571,23 +592,13 @@ body::before {
   width: 100vw;
   height: 100vh;
   top: 0;
-  mix-blend-mode: difference;
-  clip-path: circle(var(--w) at var(--x) var(--y));
+  // mix-blend-mode: difference;
+  // clip-path: circle(var(--w) at var(--x) var(--y));
+  display: none;
   // transition: 0.4s all ease-in;
   // z-index: 13;
 }
 
-#cursor.button {
-  --w: 0rem !important;
-  z-index: -1;
-  // transition: 0.4s clip-path ease-out;
-}
-
-#cursor.shrink {
-  --w: 0.4rem !important;
-  z-index: -1;
-  transition: 0.4s clip-path ease-out;
-}
 #hand {
   --x: 50%;
   --y: 50%;
@@ -626,7 +637,15 @@ body::before {
   z-index: -2;
   opacity: 0.4;
   width: 100vw;
-  filter: blur(120px);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform: translate3d(0, 0, 0);
+  transform: translateZ(0);
+  // filter: blur(120px);
   .blurred {
     border-radius: 50%;
     position: absolute;
