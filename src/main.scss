@@ -703,6 +703,20 @@ body::before {
     }
   }
 }
+
+.theme-mask {
+  position: fixed;
+  width: 200vmax;
+  height: 200vmax;
+  border-radius: 50%;
+  background: var(--theme-mask-color, #000);
+  pointer-events: none;
+  z-index: 9999;
+}
+body.dark .theme-mask {
+  background: #fff; /* expand white when going dark */
+}
+
 .dark {
   background-color: black;
   --font-color: #fff;

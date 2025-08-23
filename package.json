@@ -34,8 +34,8 @@
     "workbox-webpack-plugin": "^7.0.0"
   },
   "dependencies": {
-    "@studio-freight/lenis": "^1.0.36",
-    "gsap": "^3.12.5",
+    "@studio-freight/lenis": "^1.0.42",
+    "gsap": "^3.13.0",
     "split-type": "^0.3.4",
     "three": "^0.161.0",
     "tone": "^14.7.77"
