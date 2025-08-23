@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "watch-sass": "sass -w src/main.scss dist/main.css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "watch-tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/tailwind.css --watch",
     "all": "vite & npm run watch-sass & npm run watch-tailwind",
     "build": "npx tailwindcss -i ./src/input.css -o ./dist/tailwind.css && webpack --mode=production --node-env=production",
