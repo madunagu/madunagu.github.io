@@ -1,28 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ekene Portfolio</title>
-
+    <title>About | Ekene Madunagu</title>
     <link rel="stylesheet" href="./src/main.css" />
   </head>
 
-  <body>
-    <section class="about">
-      <header class="absolute inset-x-0 top-0 z-50">
+  <body class="bg-white">
+    <canvas id="particle-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;"></canvas>
+  <header class="absolute inset-x-0 top-0 z-50">
         <nav
           class="flex items-center justify-between p-6 lg:px-8"
           aria-label="Global"
         >
           <div class="flex lg:flex-1">
-            <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              <img
-                class="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
-              />
+            <a id="logo" href="#" class="-m-1.5 p-1.5">
+              <span class="sigma">Σ</span>
+              <span class="bold">Kene</span>
+              <span class="conditional">M</span>
+              <span class="name">adunagu</span>
             </a>
           </div>
           <div class="flex lg:hidden">
@@ -49,18 +46,41 @@
           </div>
 
           <div
-            class="navigation hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-24"
+            class="navigation lg:gap-x-24 hidden lg:flex lg:flex-1 lg:justify-end focus-cursor"
           >
-            <a href="#" class="magnetic">Home</a>
-            <a href="#" class="magnetic">About</a>
-            <a href="#" class="magnetic">Portfolio</a>
-            <a href="#" class="cta">
+            <a href="#" class="magnetic style-underlined" cursor-type="shrink"
+              >Home</a
+            >
+            <a href="#" class="magnetic style-underlined" cursor-type="shrink"
+              >About</a
+            >
+            <a href="portfolio.html" class="magnetic style-underlined" cursor-type="shrink" id="portfolio-link">Portfolio</a>
+            <div class="magnetic circled" id="change-theme">
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6.16769 11.9999H6.10758C5.28312 11.9937 4.46821 11.8229 3.71056 11.4977C2.9529 11.1724 2.26774 10.6993 1.69519 10.1059C0.633474 8.97018 0.0299486 7.48138 0.0010851 5.92678C-0.0277784 4.37219 0.520066 2.862 1.53889 1.68767C2.19527 0.95189 3.02042 0.386511 3.94346 0.040114C4.05116 -0.00134051 4.16852 -0.0109104 4.28151 0.012547C4.3945 0.0360044 4.49836 0.0914977 4.58067 0.1724C4.65691 0.250161 4.7106 0.347173 4.73601 0.453077C4.76142 0.55898 4.75759 0.669799 4.72495 0.773699C4.39549 1.67621 4.33022 2.65399 4.53679 3.5923C4.74335 4.53061 5.21319 5.39053 5.89116 6.07114C6.57546 6.74721 7.4372 7.21558 8.3766 7.42202C9.31601 7.62847 10.2947 7.56455 11.1993 7.23766C11.3069 7.19975 11.4232 7.19329 11.5344 7.21902C11.6456 7.24476 11.7472 7.30164 11.8272 7.383C11.9073 7.46436 11.9626 7.56685 11.9866 7.67847C12.0106 7.7901 12.0023 7.90625 11.9627 8.01334C11.6556 8.83334 11.1759 9.57773 10.556 10.1961C9.97944 10.7711 9.29492 11.2265 8.54183 11.536C7.78873 11.8456 6.9819 12.0033 6.16769 11.9999Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <a
+              href="mailto:ekenemadunagu@gmail.com"
+              class="magnetic cta"
+              cursor-type="button"
+            >
               Contact<span aria-hidden="true">&rarr;</span></a
             >
           </div>
         </nav>
+
         <!-- Mobile menu, show/hide based on menu open state. -->
-        <div class="lg:hidden" role="dialog" aria-modal="true">
+        <div class="hidden lg:hidden" role="dialog" aria-modal="true">
           <div
             class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
           >
@@ -95,7 +115,7 @@
               </button>
             </div>
             <div class="mt-6 flow-root">
-              <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="my-6 divide-y divide-gray-500/10">
                 <div class="space-y-2 py-6">
                   <a
                     href="#"
@@ -109,7 +129,7 @@
                   >
 
                   <a
-                    href="#"
+                    href="portfolio.html"
                     class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >Portfolio</a
                   >
@@ -126,146 +146,358 @@
           </div>
         </div>
       </header>
-    </section>
 
-    <div class="content lg:px-10">
-      <section class="about grid grid-cols-12">
-        <p class="body-text-large col-span-10 py-24">
-          From the early days of tinkering with code on my phone to becoming
-          proficient in a myriad of technologies, my journey embodies the
-          essence of perseverance and determination. My love for music,
-          particularly the guitar, has not only shaped my creative instincts but
-          also instilled discipline and rhythm in my approach to coding.
+    <main class="relative z-10 pt-32 px-6 lg:px-10">
+      <!-- Contact Information -->
+      <section class="contact-info py-16 lg:py-24">
+        <div class="grid grid-cols-12 gap-8">
+          <div class="col-span-12 lg:col-span-8">
+            <h1 class="title mb-4">Ekene Madunagu</h1>
+            <h2 class="text-2xl lg:text-3xl font-light text-gray-600 mb-6">SOFTWARE ENGINEER</h2>
+            <div class="flex flex-wrap gap-4 text-sm lg:text-base text-gray-700">
+              <a href="tel:+234806578630" class="flex items-center gap-2 hover:text-blue-600 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+                +(234) 806578630
+              </a>
+              <a href="mailto:ekenemadunagu@gmail.com" class="flex items-center gap-2 hover:text-blue-600 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                </svg>
+                ekenemadunagu@gmail.com
+              </a>
+              <a href="https://linkedin.com/in/madunagu" target="_blank" class="flex items-center gap-2 hover:text-blue-600 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M10 .4C4.698.4.4 4.698.4 10s4.298 9.6 9.6 9.6 9.6-4.298 9.6-9.6S15.302.4 10 .4zM7.65 13.979H5.706V7.723H7.65v6.256zm-.984-7.024c-.614 0-1.011-.435-1.011-.973 0-.549.409-.971 1.036-.971.627 0 1.011.422 1.023.971 0 .538-.396.973-1.048.973zm8.084 7.024h-1.944v-3.467c0-.807-.282-1.355-.985-1.355-.537 0-.856.371-.997.728-.052.127-.065.307-.065.486v3.607H9.351V7.723h1.944v1.521c.285-.451.707-.977 1.731-.977 1.267 0 2.215.828 2.215 2.609v3.123z"/>
+                </svg>
+                linkedin.com/in/madunagu
+              </a>
+              <a href="https://madunagu.github.io" target="_blank" class="flex items-center gap-2 hover:text-blue-600 transition-colors">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+                madunagu.github.io
+              </a>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-4">
+            <div class="bg-gray-100 rounded-lg p-6">
+              <h3 class="text-lg font-semibold mb-4">Location</h3>
+              <p class="text-gray-700">Lagos, Nigeria</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Summary -->
+      <section class="summary py-16 lg:py-24">
+        <h3 class="title mb-8">Summary</h3>
+        <p class="body-text-large text-gray-700 leading-relaxed">
+          Result-oriented Full Stack Developer, dedicated to crafting innovative and creative software solutions and optimizing algorithms for maximum efficiency. With more than a decade of experience in driving tangible results and enhancing performance. Proficient in tackling complex mathematical and algorithmic puzzles which are components of digital edifices.
         </p>
-        <div class="col-span-2"></div>
-        <div class="col-span-7">
-          <div class="changing-image"></div>
-        </div>
-        <div class="col-span-5">
-          <div class="short-description px-8">
-            This is a short description of the picture before
+      </section>
+
+      <!-- Experience -->
+      <section class="experience py-16 lg:py-24">
+        <h3 class="title mb-12">Experience</h3>
+        <div class="space-y-12">
+          <!-- SeerGroup Inc -->
+          <div class="border-l-4 border-blue-500 pl-8">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+              <h4 class="text-xl lg:text-2xl font-semibold">Full Stack Software Engineer</h4>
+              <span class="text-gray-600 text-sm lg:text-base">02/2024 - Present</span>
+            </div>
+            <p class="text-lg text-gray-700 mb-2">SeerGroup Inc, Remote, US</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li>Played a key role in the successful development and launch of mobile and web applications utilizing React and Node.js.</li>
+              <li>Contributed to the design and implementation of the application, ensuring functionality and usability.</li>
+              <li>Developed a user-friendly admin dashboard to efficiently manage application data and user interactions.</li>
+              <li>Implemented frontend and backend optimizations to enhance performance and scalability.</li>
+            </ul>
+          </div>
+
+          <!-- Zirite Technologies -->
+          <div class="border-l-4 border-green-500 pl-8">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+              <h4 class="text-xl lg:text-2xl font-semibold">Full Stack Software Engineer</h4>
+              <span class="text-gray-600 text-sm lg:text-base">06/2019 - 12/2024</span>
+            </div>
+            <p class="text-lg text-gray-700 mb-2">Zirite Technologies, Lagos, Nigeria</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li>Led the development and deployment of robust full-stack solutions, leveraging a diverse skill set in frontend and backend technologies.</li>
+              <li>Spearheaded the creation and optimization of mobile applications, ensuring seamless user experiences across different platforms.</li>
+              <li>Collaborated closely with cross-functional teams to translate business requirements into technical specifications.</li>
+              <li>Actively contributed to bug fixing and performance optimization efforts, ensuring the reliability and efficiency of critical systems.</li>
+            </ul>
+          </div>
+
+          <!-- Appzone -->
+          <div class="border-l-4 border-purple-500 pl-8">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+              <h4 class="text-xl lg:text-2xl font-semibold">Mobile Application Engineer, R&D Fingrid</h4>
+              <span class="text-gray-600 text-sm lg:text-base">03/2018 - 08/2018</span>
+            </div>
+            <p class="text-lg text-gray-700 mb-2">Appzone (Zone), Lagos, Nigeria</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li>Orchestrated the successful launch and deployment of multiple mobile applications tailored for client banks.</li>
+              <li>Pioneered the development of innovative payment technologies and software solutions, revolutionizing financial services in Nigeria.</li>
+              <li>Demonstrated proficiency in resolving bugs and optimizing performance within critical payment solutions.</li>
+              <li>Led user experience enhancements and comprehensive redesign initiatives for existing applications.</li>
+            </ul>
+          </div>
+
+          <!-- Fedironics -->
+          <div class="border-l-4 border-orange-500 pl-8">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+              <h4 class="text-xl lg:text-2xl font-semibold">Lead Software Engineer</h4>
+              <span class="text-gray-600 text-sm lg:text-base">08/2016 - 08/2018</span>
+            </div>
+            <p class="text-lg text-gray-700 mb-2">Fedironics, Anambra, Nigeria</p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700">
+              <li>Co-pioneered and served as the principal software developer for an award-winning new metering technology in Nigeria.</li>
+              <li>Designed and developed both the dashboard and mobile application for metering, providing intuitive interfaces.</li>
+              <li>Co-authored a comprehensive white paper and data sheet outlining a proficient embedded communication system utilizing IoT technology.</li>
+              <li>Crafted innovative solutions specifically tailored to address the unique power challenges faced in Africa.</li>
+            </ul>
           </div>
         </div>
       </section>
-      <section class="cv">
-        <h3 class="title mt-24">CV</h3>
-        <div class="grid grid-cols-12">
-          <div class="col-span-10">
-            <div class="divide-y">
-              <div class="flex justify-between py-2">
-                <div class="year">2014</div>
-                <div class="workplace">Appzone Group</div>
-                <div class="year">Mobile Developer</div>
+
+      <!-- Skills -->
+      <section class="skills py-16 lg:py-24">
+        <h3 class="title mb-12">Skills & Technologies</h3>
+        
+        <div class="skills-container">
+          <!-- Languages -->
+          <div class="skill-group">
+            <h4 class="skill-group-title">Programming Languages</h4>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/typescriptlang-icon.svg" alt="TypeScript" />
+                </div>
+                <span class="skill-label">TypeScript</span>
               </div>
-              <div class="flex justify-between py-2">
-                <div class="year">2014</div>
-                <div class="workplace">Appzone Group</div>
-                <div class="year">Mobile Developer</div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/javascript-ar21.svg" alt="JavaScript" />
+                </div>
+                <span class="skill-label">JavaScript</span>
               </div>
-              <div class="flex justify-between">
-                <div class="year">2014</div>
-                <div class="workplace">Appzone Group</div>
-                <div class="year">Mobile Developer</div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/python-icon.svg" alt="Python" />
+                </div>
+                <span class="skill-label">Python</span>
               </div>
-              <div class="flex justify-between">
-                <div class="year">2014</div>
-                <div class="workplace">Appzone Group</div>
-                <div class="year">Mobile Developer</div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/php-ar21.svg" alt="PHP" />
+                </div>
+                <span class="skill-label">PHP</span>
               </div>
-              <div class="flex justify-between">
-                <div class="year">2014</div>
-                <div class="workplace">Appzone Group</div>
-                <div class="year">Mobile Developer</div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/dart-logo.svg" alt="Dart" />
+                </div>
+                <span class="skill-label">Dart</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/java-logo.svg" alt="Java" />
+                </div>
+                <span class="skill-label">Java</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Frameworks -->
+          <div class="skill-group">
+            <h4 class="skill-group-title">Frameworks & Libraries</h4>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/reactjs-icon.svg" alt="React" />
+                </div>
+                <span class="skill-label">React</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/reactjs-icon.svg" alt="React Native" />
+                </div>
+                <span class="skill-label">React Native</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/flutterio-icon.svg" alt="Flutter" />
+                </div>
+                <span class="skill-label">Flutter</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/laravel-icon.svg" alt="Laravel" />
+                </div>
+                <span class="skill-label">Laravel</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/nodejs-ar21.svg" alt="Express" />
+                </div>
+                <span class="skill-label">Express</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/angular-icon.svg" alt="Angular" />
+                </div>
+                <span class="skill-label">Angular</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/vuejs-ar21.svg" alt="Vue" />
+                </div>
+                <span class="skill-label">Vue.js</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Platforms & Tools -->
+          <div class="skill-group">
+            <h4 class="skill-group-title">Platforms & Tools</h4>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/amazon_aws-icon.svg" alt="AWS" />
+                </div>
+                <span class="skill-label">AWS</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/google_cloud-ar21.svg" alt="GCP" />
+                </div>
+                <span class="skill-label">GCP</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/firebase-ar21.svg" alt="Firebase" />
+                </div>
+                <span class="skill-label">Firebase</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/figma-icon.svg" alt="Figma" />
+                </div>
+                <span class="skill-label">Figma</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <img src="./src/images/icons/android-icon.svg" alt="Android" />
+                </div>
+                <span class="skill-label">Android</span>
+              </div>
+              <div class="skill-item">
+                <div class="skill-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                  </svg>
+                </div>
+                <span class="skill-label">iOS</span>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
-    <div class="bg-opaque my-24 px-6 py-10 lg:px-10 lg:py-24">
-      <div class="grid grid-cols-12">
-        <div class="col-span-7">
-          <p class="body-text-large">
-            Beyond the realm of technology, my interests in music and
-            mathematics fuel my creative spirit. Whether strumming melodies on
-            my guitar or unraveling the complexities of mathematical algorithms,
-            I find inspiration in harmonizing logic with creativity.
-          </p>
-        </div>
-        <div class="col-span-5 flex flex-col items-end">
-          <img src="somehting" class="image-highlight" />
-          <p class="body-text-large text-right my-4">
-            Passion for Music and Mathematics
-          </p>
-          <div class="cta w-fit">
-            Contact me <span aria-hidden="true">&rarr;</span>
+
+      <!-- Education -->
+      <section class="education py-16 lg:py-24">
+        <h3 class="title mb-8">Education</h3>
+        <div class="border-l-4 border-indigo-500 pl-8">
+          <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+            <h4 class="text-xl lg:text-2xl font-semibold">Bachelor of Technology, Industrial Chemistry</h4>
+            <span class="text-gray-600 text-sm lg:text-base">May 2019</span>
           </div>
+          <p class="text-lg text-gray-700">Federal University of Technology Owerri, Imo State, Nigeria</p>
         </div>
-      </div>
-    </div>
-    <div class="content lg:px-10">
-      <section class="portfolio">
-        <h3 class="title">Latest Projects</h3>
-        <div
-          class="custom-scroll grid grid-cols-12 gap-8 text-white mb-12 lg:mb-24 mt-14"
-        >
-          <div class="portfolio-card col-span-6 rounded-lg">
-            <h3 class="portfolio-title">Downstream Data Visualizer</h3>
-            <div class="pills-row flex mt-2">
-              <div class="pill">Vue.js</div>
-              <div class="pill">Laravel</div>
-              <div class="pill">MySQL</div>
-              <div class="pill">Chart.js</div>
-            </div>
-            <div class="mt-4 text-base text-gray-200">
-              <strong>Overview:</strong> An interactive data visualization platform for tracking price history and changes in the Nigerian downstream oil sector. Users can explore historical price trends, compare regions, and analyze market shifts with real-time charts and analytics.<br>
-              <strong>Impact:</strong> Empowered stakeholders with actionable insights, improved transparency, and enabled data-driven decision making in the energy sector.
-            </div>
+      </section>
+
+      <!-- Achievements & Awards -->
+      <section class="achievements py-16 lg:py-24">
+        <h3 class="title mb-12">Achievements & Awards</h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6">
+            <h4 class="text-lg font-semibold mb-4 text-blue-800">British Royal Academy of Engineering Award (Africa)</h4>
+            <p class="text-gray-700">Recognition for excellence in engineering innovation and contribution to the field.</p>
           </div>
-          <div class="portfolio-card col-span-6 rounded-lg">
-            <h3 class="portfolio-title">Full-Commerce Platform</h3>
-            <div class="pills-row flex mt-2">
-              <div class="pill">Laravel</div>
-              <div class="pill">Vue.js</div>
-              <div class="pill">MySQL</div>
-              <div class="pill">Logistics</div>
-            </div>
-            <div class="mt-4 text-base text-gray-200">
-              <strong>Overview:</strong> A joint logistics and e-commerce platform integrating order management, real-time delivery tracking, and seamless online shopping. Built for scale and reliability, it connects merchants, couriers, and customers in a unified ecosystem.<br>
-              <strong>Impact:</strong> Reduced delivery times, increased merchant reach, and provided a frictionless shopping experience for thousands of users.
-            </div>
+          <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6">
+            <h4 class="text-lg font-semibold mb-4 text-green-800">ITU Telecom World Recognition of Excellence</h4>
+            <p class="text-gray-700">International recognition for outstanding contributions to telecommunications technology.</p>
+          </div>
+          <div class="bg-gradient-to-r from-purple-50 to-violet-50 rounded-lg p-6">
+            <h4 class="text-lg font-semibold mb-4 text-purple-800">Fedironics Excellence in Metering</h4>
+            <p class="text-gray-700">Award for pioneering innovative metering technology solutions in Nigeria.</p>
+          </div>
+          <div class="bg-gradient-to-r from-orange-50 to-amber-50 rounded-lg p-6">
+            <h4 class="text-lg font-semibold mb-4 text-orange-800">Professional Certifications</h4>
+            <ul class="text-gray-700 space-y-1">
+              <li>• AWS Cloud Practitioner</li>
+              <li>• IoT Cloud Academy</li>
+              <li>• Project Management Professional</li>
+              <li>• Fundamentals of Cybersecurity ISO 27001</li>
+            </ul>
           </div>
         </div>
       </section>
+    </main>
+
+    <div class="content px-6 lg:px-10">
       <section class="footer relative">
-        <div class="grid grid-cols-12">
-          <div class="col-span-9">
-            <div
-              class="navigation hidden lg:flex lg:flex-1 lg:justify-start lg:gap-x-24 mt-14"
-            >
-              <a href="#" class="magnetic">Home</a>
-              <a href="#" class="magnetic">About</a>
-              <a href="#" class="magnetic">Portfolio</a>
-            </div>
-            <h1 class="contact-text">Let's Work On a Project Together?</h1>
-            <div class="cta bg-black w-fit mt-4">Start a Conversation</div>
+        <div class="grid grid-cols-12 items-start">
+          <div
+            class="col-span-9 navigation hidden lg:flex lg:flex-1 lg:justify-start lg:gap-x-24 mt-4 lg:mt-12"
+          >
+            <a href="#" class="magnetic">Home</a>
+            <a href="#" class="magnetic">About</a>
+            <a href="portfolio.html" class="magnetic">Portfolio</a>
           </div>
           <div class="col-span-3">
-            <img src="somehte" class="w-full" alt="" srcset="" />
-            <div class="label mt-24 just-legible">Location</div>
+            <img
+              src="./src/images/eesbaytrans3.png"
+              class="w-full footer-image mx-4"
+              alt=""
+              srcset=""
+            />
+          </div>
+        </div>
+        <h1 class="contact-text">
+          <a
+            href="mailto:ekenemadunagu@gmail.com"
+            class="inline-block style-underlined button-cursor"
+          >
+            Let's Work Together?
+          </a>
+        </h1>
+
+        <div class="cta w-fit mt-4 lg:mt-12">
+          <a href="https://t.me/madunagu" target="_blank"
+            >Start a Conversation</a
+          >
+        </div>
+        <div class="grid grid-cols-12">
+          <div class="col-span-9"></div>
+          <div class="col-span-3 mx-4">
+            <div class="label just-legible">Location</div>
             <div class="info">Lagos, Nigeria</div>
           </div>
         </div>
 
-        <div class="credits flex gap-x-24">
-          <div class="just-legible">
-            Ekene Madunagu&copy; all rights reserved
-          </div>
-          <div class="just-legible">Audio by godfabb</div>
-        </div>
-        <div class="socials flex gap-x-8 mt-6">
+        <div class="socials flex focus-cursor gap-x-8">
           <!-- Github -->
-          <button type="button" class="rounded-full magnetic">
+          <a
+            href="https://github.com/madunagu"
+            target="_blank"
+            class="rounded-full magnetic"
+          >
             <svg
               width="40"
               height="40"
@@ -278,10 +510,14 @@
                 fill="currentColor"
               />
             </svg>
-          </button>
+          </a>
 
           <!-- Linkedin -->
-          <button type="button" class="rounded-full magnetic">
+          <a
+            href="https://linkedin.com/in/madunagu"
+            target="_blank"
+            class="rounded-full magnetic"
+          >
             <svg
               width="40"
               height="40"
@@ -294,9 +530,13 @@
                 fill="currentColor"
               />
             </svg>
-          </button>
+          </a>
           <!-- Telegram -->
-          <button type="button" class="rounded-full magnetic">
+          <a
+            href="https://t.me/madunagu"
+            target="_blank"
+            class="rounded-full magnetic"
+          >
             <svg
               width="40"
               height="40"
@@ -309,10 +549,60 @@
                 fill="currentColor"
               />
             </svg>
-          </button>
+          </a>
+        </div>
+        <div class="credits flex gap-x-24">
+          <div class="just-legible">
+            Ekene Madunagu&copy; all rights reserved
+          </div>
+          <div class="just-legible">Audio by godfabb</div>
         </div>
       </section>
     </div>
-    <script type="module" src="/src/main.js"></script>
+    <div class="blur-overlay fixed">
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+      <div class="blurred"></div>
+    </div>
+    <div class="moving-along" id="cursor"></div>
+    <div class="moving-along" id="hand">
+      <svg
+        fill="currentColor"
+        version="1.1"
+        id="Capa_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 203.079 203.079"
+        xml:space="preserve"
+      >
+        <path
+          d="M192.231,104.082V102c0-12.407-10.094-22.5-22.5-22.5c-2.802,0-5.484,0.519-7.961,1.459
+C159.665,70.722,150.583,63,139.731,63c-2.947,0-5.76,0.575-8.341,1.61C128.667,55.162,119.624,48,109.231,48
+c-2.798,0-5.496,0.541-8,1.516V22.5c0-12.407-10.094-22.5-22.5-22.5s-22.5,10.093-22.5,22.5v66.259
+c-3.938-5.029-8.673-9.412-14.169-11.671c-6.133-2.52-12.587-2.219-18.667,0.872c-11.182,5.686-15.792,19.389-10.277,30.548
+l27.95,56.563c0.79,1.552,19.731,38.008,54.023,38.008h40c31.54,0,57.199-25.794,57.199-57.506l-0.031-41.491H192.231z
+ M135.092,188.079h-40c-24.702,0-40.091-28.738-40.646-29.796l-27.88-56.42c-1.924-3.893-0.33-8.519,3.629-10.532
+c2.182-1.11,4.081-1.223,6.158-0.372c8.281,3.395,16.41,19.756,19.586,29.265l2.41,7.259l12.883-4.559V22.5
+c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5V109h0.136h14.864h0.136V71c0-4.187,3.748-8,7.864-8c4.262,0,8,3.505,8,7.5v15v26h15
+v-26c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5V102v16.5h15V102c0-4.136,3.364-7.5,7.5-7.5s7.5,3.364,7.5,7.5v10.727h0.035
+l0.025,32.852C177.291,169.014,158.36,188.079,135.092,188.079z"
+        />
+      </svg>
+    </div>
+    <!-- <div class="spinner">
+      <div class="play">
+        <svg viewBox="0 0 10 12" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1.71779 11.1732C1.51503 11.1732 1.31228 11.1207 1.12648 11.0148C0.941947 10.9114 0.788513 10.7605 0.682179 10.5776C0.575845 10.3948 0.520506 10.1868 0.521931 9.97532V2.02428C0.521931 1.58856 0.747862 1.20001 1.12648 0.984835C1.50469 0.769249 1.95407 0.773801 2.32855 0.996835L9.008 4.97256C9.37338 5.19021 9.59186 5.57421 9.59186 6.00001C9.59186 6.4258 9.37338 6.8098 9.008 7.02746L2.32897 11.0032C2.14432 11.114 1.93313 11.1727 1.71779 11.1732ZM1.71945 1.65518C1.65489 1.65575 1.59153 1.67269 1.53531 1.70442C1.47831 1.73599 1.43091 1.78238 1.39813 1.83869C1.36535 1.895 1.34841 1.95913 1.3491 2.02428V9.97573C1.3491 10.169 1.47903 10.2637 1.53531 10.2956C1.59163 10.3285 1.65579 10.3455 1.721 10.3448C1.7862 10.3441 1.85001 10.3259 1.90565 10.2919L8.58469 6.31615C8.7469 6.21973 8.76469 6.0629 8.76469 6.00001C8.76469 5.93711 8.74731 5.78028 8.58469 5.68387L1.90524 1.70815C1.8494 1.67366 1.78508 1.65532 1.71945 1.65518Z"
+            fill="black"
+          />
+        </svg>
+      </div>
+    </div> -->
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>

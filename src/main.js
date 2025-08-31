@@ -171,6 +171,15 @@ themeSwitcher.addEventListener("click", toggleThemeMode);
 document.addEventListener('DOMContentLoaded',()=>{
   initParticles();
 
+  // Apply initial animation state
+  document.body.classList.add('animate-on-load');
+
+  // Revert to default state after 1 second
+  setTimeout(() => {
+    document.body.classList.remove('animate-on-load');
+    // document.body.classList.add('revert-after-load');
+  }, 2000);
+
   // --- PARALLAX HERO ---
   const parallaxEls = document.querySelectorAll('[data-parallax]');
   document.addEventListener('mousemove',e=>{
