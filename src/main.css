@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Alata&family=Biryani:wght@200;300;400;600;700;800;900&display=swap");
-@import "tailwindcss";
+@import url("./fonts/Chillax_Complete/Fonts/WEB/css/chillax.css");
+@import url("./fonts/ClashDisplay_Complete/Fonts/WEB/css/clash-display.css");
+@import url("./fonts/THUNDER/Fonts/Web-PS/Thunder-HC.css");
 
+@import "tailwindcss";
 @keyframes bounce {
   0% {
     transform: scale(1) rotate(0deg);
@@ -135,6 +138,7 @@ section {
   font-size: clamp(2.2rem, 0.6rem + 5.5vw, 10rem);
   line-height: 6.2rem;
   font-weight: 500;
+  font-family: "Thunder-HC", "ClashDisplay-Bold", "Chillax-Bold", "Alata";
   display: inline-block;
   position: relative;
 }
@@ -596,4 +600,11 @@ body::before {
   background: #ffffff;
   opacity: 0.8;
 }
+
+/* Example usage:
+   font-family: 'Chillax-Regular', sans-serif;
+   font-family: 'ClashDisplay-Bold', sans-serif;
+   font-family: 'Thunder-HC', sans-serif;
+   font-family: 'Bigilla', serif;
+*/
 
