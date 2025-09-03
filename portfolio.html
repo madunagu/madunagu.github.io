@@ -9,26 +9,95 @@
 
   <body>
     <canvas id="particle-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;"></canvas>
-    <section class="hero" cursor-type="button">
-      <header class="absolute inset-x-0 top-0 z-50">
-        <nav
-          class="flex items-center justify-between p-6 lg:px-8"
-          aria-label="Global"
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav
+        class="flex items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
+        <div class="flex lg:flex-1">
+          <a id="logo" href="#" class="-m-1.5 p-1.5">
+            <span class="sigma">Σ</span>
+            <span class="bold">Kene</span>
+            <span class="conditional">M</span>
+            <span class="name">adunagu</span>
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button
+            type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div
+          class="navigation lg:gap-x-24 hidden lg:flex lg:flex-1 lg:justify-end focus-cursor"
         >
-          <div class="flex lg:flex-1">
-            <a id="logo" href="#" class="-m-1.5 p-1.5">
-              <span class="sigma">Σ</span>
-              <span class="bold">Kene</span>
-              <span class="conditional">M</span>
-              <span class="name">adunagu</span>
-            </a>
+          <a href="#" class="magnetic style-underlined" cursor-type="shrink"
+            >Home</a
+          >
+          <a href="#" class="magnetic style-underlined" cursor-type="shrink"
+            >About</a
+          >
+          <a href="portfolio.html" class="magnetic style-underlined" cursor-type="shrink" id="portfolio-link">Portfolio</a>
+          <div class="magnetic circled" id="change-theme">
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.16769 11.9999H6.10758C5.28312 11.9937 4.46821 11.8229 3.71056 11.4977C2.9529 11.1724 2.26774 10.6993 1.69519 10.1059C0.633474 8.97018 0.0299486 7.48138 0.0010851 5.92678C-0.0277784 4.37219 0.520066 2.862 1.53889 1.68767C2.19527 0.95189 3.02042 0.386511 3.94346 0.040114C4.05116 -0.00134051 4.16852 -0.0109104 4.28151 0.012547C4.3945 0.0360044 4.49836 0.0914977 4.58067 0.1724C4.65691 0.250161 4.7106 0.347173 4.73601 0.453077C4.76142 0.55898 4.75759 0.669799 4.72495 0.773699C4.39549 1.67621 4.33022 2.65399 4.53679 3.5923C4.74335 4.53061 5.21319 5.39053 5.89116 6.07114C6.57546 6.74721 7.4372 7.21558 8.3766 7.42202C9.31601 7.62847 10.2947 7.56455 11.1993 7.23766C11.3069 7.19975 11.4232 7.19329 11.5344 7.21902C11.6456 7.24476 11.7472 7.30164 11.8272 7.383C11.9073 7.46436 11.9626 7.56685 11.9866 7.67847C12.0106 7.7901 12.0023 7.90625 11.9627 8.01334C11.6556 8.83334 11.1759 9.57773 10.556 10.1961C9.97944 10.7711 9.29492 11.2265 8.54183 11.536C7.78873 11.8456 6.9819 12.0033 6.16769 11.9999Z"
+                fill="currentColor"
+              />
+            </svg>
           </div>
-          <div class="flex lg:hidden">
+          <a
+            href="mailto:ekenemadunagu@gmail.com"
+            class="magnetic cta"
+            cursor-type="button"
+          >
+            Contact<span aria-hidden="true">&rarr;</span></a
+          >
+        </div>
+      </nav>
+
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div class="hidden lg:hidden" role="dialog" aria-modal="true">
+        <div
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        >
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
+              <img
+                class="h-8 w-auto"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                alt=""
+              />
+            </a>
             <button
               type="button"
-              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              class="-m-2.5 rounded-md p-2.5 text-gray-700"
             >
-              <span class="sr-only">Open main menu</span>
+              <span class="sr-only">Close menu</span>
               <svg
                 class="h-6 w-6"
                 fill="none"
@@ -40,382 +109,46 @@
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
             </button>
           </div>
-
-          <div
-            class="navigation lg:gap-x-24 hidden lg:flex lg:flex-1 lg:justify-end focus-cursor"
-          >
-            <a href="#" class="magnetic style-underlined" cursor-type="shrink"
-              >Home</a
-            >
-            <a href="#" class="magnetic style-underlined" cursor-type="shrink"
-              >About</a
-            >
-            <a href="portfolio.html" class="magnetic style-underlined" cursor-type="shrink" id="portfolio-link">Portfolio</a>
-            <div class="magnetic circled" id="change-theme">
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.16769 11.9999H6.10758C5.28312 11.9937 4.46821 11.8229 3.71056 11.4977C2.9529 11.1724 2.26774 10.6993 1.69519 10.1059C0.633474 8.97018 0.0299486 7.48138 0.0010851 5.92678C-0.0277784 4.37219 0.520066 2.862 1.53889 1.68767C2.19527 0.95189 3.02042 0.386511 3.94346 0.040114C4.05116 -0.00134051 4.16852 -0.0109104 4.28151 0.012547C4.3945 0.0360044 4.49836 0.0914977 4.58067 0.1724C4.65691 0.250161 4.7106 0.347173 4.73601 0.453077C4.76142 0.55898 4.75759 0.669799 4.72495 0.773699C4.39549 1.67621 4.33022 2.65399 4.53679 3.5923C4.74335 4.53061 5.21319 5.39053 5.89116 6.07114C6.57546 6.74721 7.4372 7.21558 8.3766 7.42202C9.31601 7.62847 10.2947 7.56455 11.1993 7.23766C11.3069 7.19975 11.4232 7.19329 11.5344 7.21902C11.6456 7.24476 11.7472 7.30164 11.8272 7.383C11.9073 7.46436 11.9626 7.56685 11.9866 7.67847C12.0106 7.7901 12.0023 7.90625 11.9627 8.01334C11.6556 8.83334 11.1759 9.57773 10.556 10.1961C9.97944 10.7711 9.29492 11.2265 8.54183 11.536C7.78873 11.8456 6.9819 12.0033 6.16769 11.9999Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-            <a
-              href="mailto:ekenemadunagu@gmail.com"
-              class="magnetic cta"
-              cursor-type="button"
-            >
-              Contact<span aria-hidden="true">&rarr;</span></a
-            >
-          </div>
-        </nav>
-
-        <!-- Mobile menu, show/hide based on menu open state. -->
-        <div class="hidden lg:hidden" role="dialog" aria-modal="true">
-          <div
-            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-          >
-            <div class="flex items-center justify-between">
-              <a href="#" class="-m-1.5 p-1.5">
-                <span class="sr-only">Your Company</span>
-                <img
-                  class="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt=""
-                />
-              </a>
-              <button
-                type="button"
-                class="-m-2.5 rounded-md p-2.5 text-gray-700"
-              >
-                <span class="sr-only">Close menu</span>
-                <svg
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
+          <div class="mt-6 flow-root">
+            <div class="my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >Home</a
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div class="mt-6 flow-root">
-              <div class="my-6 divide-y divide-gray-500/10">
-                <div class="space-y-2 py-6">
-                  <a
-                    href="#"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >Home</a
-                  >
-                  <a
-                    href="#"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >About</a
-                  >
-
-                  <a
-                    href="portfolio.html"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >Portfolio</a
-                  >
-                </div>
-                <div class="py-6">
-                  <a
-                    href="#"
-                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >Contact</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <div class="banner relative isolate px-6 pt-14 lg:px-10 flex flex-col">
-        <div class="display absolute inset-x-0 mx-6 lg:mx-10 grid grid-cols-12">
-          <div class="col-span-12 md:col-span-8 flex flex-col justify-center">
-            <h1 class="banner-text mb-6 md:mb-12 text-center md:text-left">
-              <span aria-hidden="true">
-                <span>Crafts<span>Ekene</span></span>
-                <span>Digital<span>David</span></span>
-                <span>Edifices<span>Madunagu</span></span>
-              </span>
-            </h1>
-            <!-- <h1 class="banner-text mb-6 md:mb-12 text-center md:text-left">
-              Ekene David Madunagu
-            </h1> -->
-            <div class="banner-tagline text-center md:text-left">
-              Full Stack Software Engineer
-            </div>
-          </div>
-          <div class="col-span-12 md:col-span-4">
-            <div class="bg-black width-full height-full">
-              <!-- <img class="w-full" id="rotor" src="images/sound-display.jpeg" /> -->
-            </div>
-          </div>
-        </div>
-
-      <div class="music-indicator"></div>
-      <div class="skill-container">
-        <div
-          id="skill-slider"
-          class="skill-slide md:flex py-2 justify-between overflow-y-hidden h-8"
-        >
-          <div class="skill-item">FULLSTACK SOFTWARE ENGINEER</div>
-          <div class="skill-item">BACKEND SPECIALIST</div>
-          <div class="skill-item">FRONTEND ENGINEER</div>
-          <div class="skill-item">DESIGN ENTHUSIAST</div>
-          <div class="skill-item">CREATIVE DEVELOPER</div>
-          <div class="skill-item">MOBILE DEVELOPER</div>
-        </div>
-        <div
-          id="skill-slider"
-          class="skill-slide md:flex py-2 justify-between overflow-y-hidden h-8"
-        >
-          <div class="skill-item">FULLSTACK SOFTWARE ENGINEER</div>
-          <div class="skill-item">BACKEND SPECIALIST</div>
-          <div class="skill-item">DESIGN ENTHUSIAST</div>
-        </div>
-      </div>
-    </section>
-
-    <div class="content px-6 lg:px-10">
-      <section class="about grid grid-cols-12">
-        <p class="body-text-large about-text col-span-10 py-16 lg:py-24">
-          From the early days of tinkering with code on my phone to becoming
-          proficient in a myriad of technologies, my journey embodies the
-          essence of perseverance and determination. My love for music,
-          particularly the guitar, has not only shaped my creative instincts but
-          also instilled discipline and rhythm in my approach to coding.
-        </p>
-        <div class="col-span-2"></div>
-        <div class="col-span-12 lg:col-span-7">
-          <div class="changing-image overflow-y-hidden">
-            <img
-              class="object-cover mx-auto"
-              src="./src/images/eesbaystudiozn1-1.jpg"
-            />
-          </div>
-        </div>
-        <div class="col-span-12 lg:col-span-5">
-          <div class="short-description px-8">
-            Commited to continual improvement through Passion, Practice and
-            Precision
-          </div>
-        </div>
-      </section>
-      <section class="expertise">
-        <h3 class="title mt-24">Expertise</h3>
-        <div class="divide-y border-y border-zinc-400 divide-zinc-400">
-          <div class="expertise-item pt-4 pb-8 lg:pb-24">
-            <div class="title pb-6">Flutter</div>
-            <div class="grid grid-cols-12 gap-2">
-              <div class="col-span-3 img-cont">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  viewBox="0 0 64 64"
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >About</a
                 >
-                  <g transform="matrix(.061615 0 0 .061615 -1.430818 -1.2754)">
-                    <defs>
-                      <path
-                        id="A"
-                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
-                      />
-                    </defs>
-                    <clipPath id="B"><use xlink:href="#A" /></clipPath>
-                    <g clip-path="url(#B)">
-                      <path
-                        d="M360.3 779.7L520 939.5 959.4 500H639.9z"
-                        fill="#39cefd"
-                      />
-                    </g>
-                    <defs>
-                      <path
-                        id="C"
-                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
-                      />
-                    </defs>
-                    <clipPath id="D"><use xlink:href="#C" /></clipPath>
-                    <path
-                      clip-path="url(#D)"
-                      d="M639.9 20.7h319.5l-679 679.1L120.6 540z"
-                      fill="#39cefd"
-                    />
-                    <defs>
-                      <path
-                        id="E"
-                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
-                      />
-                    </defs>
-                    <clipPath id="F"><use xlink:href="#E" /></clipPath>
-                    <path
-                      clip-path="url(#F)"
-                      d="M520 939.5l119.9 119.8h319.5L679.8 779.7z"
-                      fill="#03569b"
-                    />
-                    <defs>
-                      <path
-                        id="G"
-                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
-                      />
-                    </defs>
-                    <clipPath id="H"><use xlink:href="#G" /></clipPath>
-                    <linearGradient
-                      id="I"
-                      gradientUnits="userSpaceOnUse"
-                      x1="566.635"
-                      y1="970.339"
-                      x2="685.65"
-                      y2="851.324"
-                    >
-                      <stop offset="0" stop-color="#1a237e" stop-opacity=".4" />
-                      <stop offset="1" stop-color="#1a237e" stop-opacity="0" />
-                    </linearGradient>
-                    <path
-                      clip-path="url(#H)"
-                      d="M757 857.4l-77.2-77.7L520 939.5z"
-                      fill="url(#I)"
-                    />
-                    <defs>
-                      <path
-                        id="J"
-                        d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
-                      />
-                    </defs>
-                    <clipPath id="K"><use xlink:href="#J" /></clipPath>
-                    <g clip-path="url(#K)">
-                      <path
-                        d="M360.282 779.645L520.086 619.84 679.9 779.645 520.086 939.45z"
-                        fill="#16b9fd"
-                      />
-                    </g>
-                    <radialGradient
-                      id="L"
-                      cx="7824.659"
-                      cy="-2855.979"
-                      r="5082.889"
-                      gradientTransform="matrix(0.25,0,0,-0.25,-1812,-622.5)"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset="0" stop-color="#fff" stop-opacity=".1" />
-                      <stop offset="1" stop-color="#fff" stop-opacity="0" />
-                    </radialGradient>
-                    <path
-                      d="M959.4 500L679.8 779.7l279.6 279.7H639.9L360.2 779.7 639.9 500h319.5zM639.9 20.7L120.6 540l159.8 159.8 679-679.1H639.9z"
-                      fill="url(#L)"
-                    />
-                  </g>
-                </svg>
+
+                <a
+                  href="portfolio.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >Portfolio</a
+                >
               </div>
-              <div class="col-span-6 desc px-2 lg:px-4">
-                Skilled in Flutter for building cross-platform mobile
-                applications with a focus on sleek designs and smooth
-                functionality, catering to diverse user preferences.
-              </div>
-              <div class="col-span-3 years">
-                <span class="year">5</span>
-                <span class="duration">Years</span>
+              <div class="py-6">
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >Contact</a
+                >
               </div>
             </div>
-          </div>
-          <div class="expertise-item pt-4 pb-8 lg:pb-24">
-            <div class="title pb-6">Laravel</div>
-            <div class="grid grid-cols-12 gap-2">
-              <div class="col-span-3 img-cont">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-                  <path
-                    d="M39.755 53.777a.985.985 0 0 1-.847-.479l-7.455-12.435-13.943 3.79a.985.985 0 0 1-1.1-.495L.117 13.534a.985.985 0 0 1 .737-1.442l13.833-1.86a.985.985 0 0 1 .979.468l16.7 27.87 19.406-5.277-6.47-9.14a.985.985 0 0 1 .55-1.53l9.08-2.146a.985.985 0 0 1 .996.341l7.857 9.8a.985.985 0 0 1-.512 1.568l-8.253 2.25 7.224 10.18a.985.985 0 0 1-.479 1.502l-21.695 7.588a.985.985 0 0 1-.314.061zm-6.328-13.453l6.757 11.268 19.692-6.894-6.878-9.695zM2.52 13.842l15.247 28.7 12.655-3.433-16.116-26.834zm45.25 10.366l6.052 8.534 7.527-2.047-6.548-8.154z"
-                    fill="#ef533f"
-                  />
-                </svg>
-              </div>
-              <div class="col-span-6 desc px-2 lg:px-4">
-                Proficient in leveraging Laravel's robust framework to develop
-                secure and efficient backend solutions, ensuring optimal
-                performance and reliability.
-              </div>
-              <div class="col-span-3 years">
-                <span class="year">6</span>
-                <span class="duration">Years</span>
-              </div>
-            </div>
-          </div>
-          <div class="expertise-item pt-4 pb-8 lg:pb-24">
-            <div class="title pb-6">Angular</div>
-            <div class="grid grid-cols-12 gap-2">
-              <div class="col-span-3 img-cont">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                  <path
-                    d="M1 5.3L15.892 0l15.284 5.218-2.47 19.694L15.892 32 3.286 25.004 1 5.3z"
-                    fill="#e23237"
-                  />
-                  <path
-                    d="M31.176 5.218L15.892 0v32l12.814-7.088 2.47-19.694z"
-                    fill="#b52e31"
-                  />
-                  <path
-                    d="M15.915 3.74l-9.28 20.64 3.463-.07 1.87-4.664h8.3l2.032 4.7 3.302.07L15.915 3.74zm.023 6.626l3.14 6.557H13.2l2.747-6.557z"
-                    fill="#fff"
-                  />
-                </svg>
-              </div>
-              <div class="col-span-6 desc px-2 lg:px-4">
-                Experience crafting dynamic and scalable web applications using
-                Angular, delivering seamless user experiences and intuitive
-                interfaces.
-              </div>
-              <div class="col-span-3 years">
-                <span class="year">7</span>
-                <span class="duration">Years</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    <div
-      class="bg-opaque bg-white dark:bg-gray-50 card my-24 px-6 py-10 lg:px-10 lg:py-24"
-    >
-      <div class="grid grid-cols-12">
-        <div class="col-span-7">
-          <p class="body-text-large">
-            Beyond the realm of technology, my interests in music and
-            mathematics fuel my creative spirit. Whether strumming melodies on
-            my guitar or unraveling the complexities of mathematical algorithms,
-            I find inspiration in harmonizing logic with creativity.
-          </p>
-        </div>
-        <div class="col-span-5 flex flex-col items-end">
-          <img src="./src/images/cover_front.jpg" class="image-highlight" />
-          <p class="body-text-large text-right my-4">
-            Passion for Music and Mathematics
-          </p>
-          <div class="cta w-fit">
-            Contact me <span aria-hidden="true">&rarr;</span>
           </div>
         </div>
       </div>
-    </div>
+    </header>
+    <main class="main-content">
+
     <div class="content px-6 lg:px-10">
-      <h3 class="title">Projects</h3>
       <section class="portfolio">
         <div class="custom-scroll text-white mb-12 lg:mb-24 mt-6 lg:mt-14">
           <div class="spacer col-span-9"></div>
@@ -549,6 +282,8 @@
           </div>
         </div>
       </section>
+      <div class="h-48">
+      </div>
       <section class="footer relative">
         <div class="grid grid-cols-12 items-start">
           <div
@@ -657,6 +392,7 @@
         </div>
       </section>
     </div>
+    </main>
     <div class="blur-overlay fixed">
       <div class="blurred"></div>
       <div class="blurred"></div>

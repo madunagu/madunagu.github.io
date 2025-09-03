@@ -5,40 +5,70 @@ import SplitType from "split-type";
 
 // --- PARTICLE BACKGROUND ---
 function initParticles() {
-  const canvas = document.getElementById('particle-bg');
+  const canvas = document.getElementById("particle-bg");
   if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let w = window.innerWidth, h = window.innerHeight;
-  canvas.width = w; canvas.height = h;
-  let particles = Array.from({length: 80}, () => ({
-    x: Math.random()*w, y: Math.random()*h,
-    vx: (Math.random()-0.5)*0.7, vy: (Math.random()-0.5)*0.7, r: Math.random()*2+1
+  const ctx = canvas.getContext("2d");
+  let w = window.innerWidth,
+    h = window.innerHeight;
+  canvas.width = w;
+  canvas.height = h;
+  let particles = Array.from({ length: 80 }, () => ({
+    x: Math.random() * w,
+    y: Math.random() * h,
+    vx: (Math.random() - 0.5) * 0.7,
+    vy: (Math.random() - 0.5) * 0.7,
+    r: Math.random() * 2 + 1,
   }));
   function draw() {
-    ctx.clearRect(0,0,w,h);
+    ctx.clearRect(0, 0, w, h);
     for (let p of particles) {
-      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,2*Math.PI);
-      ctx.fillStyle = 'rgba(80,120,255,0.5)'; ctx.fill();
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+      ctx.fillStyle = "rgba(80,120,255,0.5)";
+      ctx.fill();
       for (let q of particles) {
-        let dx=p.x-q.x,dy=p.y-q.y,dist=Math.sqrt(dx*dx+dy*dy);
-        if(dist<80) {ctx.strokeStyle='rgba(80,120,255,0.1)';ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}
+        let dx = p.x - q.x,
+          dy = p.y - q.y,
+          dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 80) {
+          ctx.strokeStyle = "rgba(80,120,255,0.1)";
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(q.x, q.y);
+          ctx.stroke();
+        }
       }
     }
   }
   function update() {
     for (let p of particles) {
-      p.x+=p.vx; p.y+=p.vy;
-      if(p.x<0||p.x>w)p.vx*=-1;
-      if(p.y<0||p.y>h)p.vy*=-1;
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
     }
   }
-  function animate() {update();draw();requestAnimationFrame(animate);}
+  function animate() {
+    update();
+    draw();
+    requestAnimationFrame(animate);
+  }
   animate();
-  window.addEventListener('resize',()=>{w=window.innerWidth;h=window.innerHeight;canvas.width=w;canvas.height=h;});
-  canvas.addEventListener('mousemove',e=>{
-    for(let p of particles){
-      let dx=p.x-e.offsetX,dy=p.y-e.offsetY,dist=Math.sqrt(dx*dx+dy*dy);
-      if(dist<60){p.vx+=(dx/1000);p.vy+=(dy/1000);}
+  window.addEventListener("resize", () => {
+    w = window.innerWidth;
+    h = window.innerHeight;
+    canvas.width = w;
+    canvas.height = h;
+  });
+  canvas.addEventListener("mousemove", (e) => {
+    for (let p of particles) {
+      let dx = p.x - e.offsetX,
+        dy = p.y - e.offsetY,
+        dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 60) {
+        p.vx += dx / 1000;
+        p.vy += dy / 1000;
+      }
     }
   });
 }
@@ -120,10 +150,10 @@ function moveFollowingCursor(e) {
   const y = Math.round((clientY / window.innerHeight) * 100);
 
   gsap.to(movingAlong, {
-    '--x': `${x}%`,
-    '--y': `${y}%`,
+    "--x": `${x}%`,
+    "--y": `${y}%`,
     duration: 1.2,
-    ease: 'sine.out',
+    ease: "sine.out",
   });
 }
 
@@ -168,59 +198,100 @@ setThemeMode(isDarkMode);
 window.addEventListener("mousemove", moveFollowingCursor);
 themeSwitcher.addEventListener("click", toggleThemeMode);
 
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener("DOMContentLoaded", () => {
   initParticles();
 
   // Apply initial animation state
-  document.body.classList.add('animate-on-load');
+  document.body.classList.add("animate-on-load");
 
   // Revert to default state after 1 second
   setTimeout(() => {
-    document.body.classList.remove('animate-on-load');
+    document.body.classList.remove("animate-on-load");
     // document.body.classList.add('revert-after-load');
   }, 2000);
 
   // --- PARALLAX HERO ---
-  const parallaxEls = document.querySelectorAll('[data-parallax]');
-  document.addEventListener('mousemove',e=>{
-    const cx=window.innerWidth/2,cy=window.innerHeight/2;
-    parallaxEls.forEach(el=>{
-      const depth=+el.dataset.parallax;
-      const dx=(e.clientX-cx)/cx,dy=(e.clientY-cy)/cy;
-      gsap.to(el,{x:dx*20*depth,y:dy*20*depth,duration:0.6,ease:'power2.out'});
+  const parallaxEls = document.querySelectorAll("[data-parallax]");
+  document.addEventListener("mousemove", (e) => {
+    const cx = window.innerWidth / 2,
+      cy = window.innerHeight / 2;
+    parallaxEls.forEach((el) => {
+      const depth = +el.dataset.parallax;
+      const dx = (e.clientX - cx) / cx,
+        dy = (e.clientY - cy) / cy;
+      gsap.to(el, {
+        x: dx * 20 * depth,
+        y: dy * 20 * depth,
+        duration: 0.6,
+        ease: "power2.out",
+      });
     });
   });
 
   // --- ENHANCED MAGNETIC ---
-  document.querySelectorAll('.magnetic').forEach(el=>{
-    el.addEventListener('mousemove',e=>{
-      const rect=el.getBoundingClientRect();
-      const x=e.clientX-rect.left-rect.width/2;
-      const y=e.clientY-rect.top-rect.height/2;
-      gsap.to(el,{x:x*0.25,y:y*0.25,scale:1.08,duration:0.4,ease:'power3.out'});
+  document.querySelectorAll(".magnetic").forEach((el) => {
+    el.addEventListener("mousemove", (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      gsap.to(el, {
+        x: x * 0.25,
+        y: y * 0.25,
+        scale: 1.08,
+        duration: 0.4,
+        ease: "power3.out",
+      });
     });
-    el.addEventListener('mouseleave',()=>{
-      gsap.to(el,{x:0,y:0,scale:1,duration:0.6,ease:'elastic.out(1,0.4)'});
+    el.addEventListener("mouseleave", () => {
+      gsap.to(el, {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 0.6,
+        ease: "elastic.out(1,0.4)",
+      });
     });
   });
 
   // --- 3D CARD HOVER ---
-  document.querySelectorAll('.portfolio-card').forEach(card=>{
-    card.addEventListener('mousemove',e=>{
-      const rect=card.getBoundingClientRect();
-      const x=(e.clientX-rect.left)/rect.width-0.5;
-      const y=(e.clientY-rect.top)/rect.height-0.5;
-      gsap.to(card,{rotateY:x*16,rotateX:-y*16,boxShadow:`${-x*20}px ${y*20}px 40px rgba(0,0,0,0.18)`,duration:0.4,ease:'power2.out'});
+  document.querySelectorAll(".portfolio-card").forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      gsap.to(card, {
+        rotateY: x * 16,
+        rotateX: -y * 16,
+        boxShadow: `${-x * 20}px ${y * 20}px 40px rgba(0,0,0,0.18)`,
+        duration: 0.4,
+        ease: "power2.out",
+      });
     });
-    card.addEventListener('mouseleave',()=>{
-      gsap.to(card,{rotateY:0,rotateX:0,boxShadow:'0 4px 24px rgba(0,0,0,0.08)',duration:0.7,ease:'elastic.out(1,0.4)'});
+    card.addEventListener("mouseleave", () => {
+      gsap.to(card, {
+        rotateY: 0,
+        rotateX: 0,
+        boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+        duration: 0.7,
+        ease: "elastic.out(1,0.4)",
+      });
     });
   });
 
   // --- SVG LOGO DRAW ---
-  const sigma = document.querySelector('.sigma');
-  if(sigma){
-    sigma.style.opacity=0;
-    gsap.fromTo(sigma,{drawSVG:'0%',opacity:0},{drawSVG:'100%',opacity:1,duration:1.2,delay:0.2,ease:'power2.inOut'});
+  const sigma = document.querySelector(".sigma");
+  if (sigma) {
+    sigma.style.opacity = 0;
+    gsap.fromTo(
+      sigma,
+      { drawSVG: "0%", opacity: 0 },
+      {
+        drawSVG: "100%",
+        opacity: 1,
+        duration: 1.2,
+        delay: 0.2,
+        ease: "power2.inOut",
+      }
+    );
   }
 });

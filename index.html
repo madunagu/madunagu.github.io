@@ -9,26 +9,95 @@
 
   <body>
     <canvas id="particle-bg" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none;"></canvas>
-    <section class="hero" cursor-type="button">
-      <header class="absolute inset-x-0 top-0 z-50">
-        <nav
-          class="flex items-center justify-between p-6 lg:px-8"
-          aria-label="Global"
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav
+        class="flex items-center justify-between p-6 lg:px-8"
+        aria-label="Global"
+      >
+        <div class="flex lg:flex-1">
+          <a id="logo" href="#" class="-m-1.5 p-1.5">
+            <span class="sigma">Σ</span>
+            <span class="bold">Kene</span>
+            <span class="conditional">M</span>
+            <span class="name">adunagu</span>
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button
+            type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div
+          class="navigation lg:gap-x-24 hidden lg:flex lg:flex-1 lg:justify-end focus-cursor"
         >
-          <div class="flex lg:flex-1">
-            <a id="logo" href="#" class="-m-1.5 p-1.5">
-              <span class="sigma">Σ</span>
-              <span class="bold">Kene</span>
-              <span class="conditional">M</span>
-              <span class="name">adunagu</span>
-            </a>
+          <a href="#" class="magnetic style-underlined" cursor-type="shrink"
+            >Home</a
+          >
+          <a href="#" class="magnetic style-underlined" cursor-type="shrink"
+            >About</a
+          >
+          <a href="portfolio.html" class="magnetic style-underlined" cursor-type="shrink" id="portfolio-link">Portfolio</a>
+          <div class="magnetic circled" id="change-theme">
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6.16769 11.9999H6.10758C5.28312 11.9937 4.46821 11.8229 3.71056 11.4977C2.9529 11.1724 2.26774 10.6993 1.69519 10.1059C0.633474 8.97018 0.0299486 7.48138 0.0010851 5.92678C-0.0277784 4.37219 0.520066 2.862 1.53889 1.68767C2.19527 0.95189 3.02042 0.386511 3.94346 0.040114C4.05116 -0.00134051 4.16852 -0.0109104 4.28151 0.012547C4.3945 0.0360044 4.49836 0.0914977 4.58067 0.1724C4.65691 0.250161 4.7106 0.347173 4.73601 0.453077C4.76142 0.55898 4.75759 0.669799 4.72495 0.773699C4.39549 1.67621 4.33022 2.65399 4.53679 3.5923C4.74335 4.53061 5.21319 5.39053 5.89116 6.07114C6.57546 6.74721 7.4372 7.21558 8.3766 7.42202C9.31601 7.62847 10.2947 7.56455 11.1993 7.23766C11.3069 7.19975 11.4232 7.19329 11.5344 7.21902C11.6456 7.24476 11.7472 7.30164 11.8272 7.383C11.9073 7.46436 11.9626 7.56685 11.9866 7.67847C12.0106 7.7901 12.0023 7.90625 11.9627 8.01334C11.6556 8.83334 11.1759 9.57773 10.556 10.1961C9.97944 10.7711 9.29492 11.2265 8.54183 11.536C7.78873 11.8456 6.9819 12.0033 6.16769 11.9999Z"
+                fill="currentColor"
+              />
+            </svg>
           </div>
-          <div class="flex lg:hidden">
+          <a
+            href="mailto:ekenemadunagu@gmail.com"
+            class="magnetic cta"
+            cursor-type="button"
+          >
+            Contact<span aria-hidden="true">&rarr;</span></a
+          >
+        </div>
+      </nav>
+
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div class="hidden lg:hidden" role="dialog" aria-modal="true">
+        <div
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        >
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
+              <img
+                class="h-8 w-auto"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                alt=""
+              />
+            </a>
             <button
               type="button"
-              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              class="-m-2.5 rounded-md p-2.5 text-gray-700"
             >
-              <span class="sr-only">Open main menu</span>
+              <span class="sr-only">Close menu</span>
               <svg
                 class="h-6 w-6"
                 fill="none"
@@ -40,113 +109,45 @@
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
             </button>
           </div>
-
-          <div
-            class="navigation lg:gap-x-24 hidden lg:flex lg:flex-1 lg:justify-end focus-cursor"
-          >
-            <a href="#" class="magnetic style-underlined" cursor-type="shrink"
-              >Home</a
-            >
-            <a href="#" class="magnetic style-underlined" cursor-type="shrink"
-              >About</a
-            >
-            <a href="portfolio.html" class="magnetic style-underlined" cursor-type="shrink" id="portfolio-link">Portfolio</a>
-            <div class="magnetic circled" id="change-theme">
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M6.16769 11.9999H6.10758C5.28312 11.9937 4.46821 11.8229 3.71056 11.4977C2.9529 11.1724 2.26774 10.6993 1.69519 10.1059C0.633474 8.97018 0.0299486 7.48138 0.0010851 5.92678C-0.0277784 4.37219 0.520066 2.862 1.53889 1.68767C2.19527 0.95189 3.02042 0.386511 3.94346 0.040114C4.05116 -0.00134051 4.16852 -0.0109104 4.28151 0.012547C4.3945 0.0360044 4.49836 0.0914977 4.58067 0.1724C4.65691 0.250161 4.7106 0.347173 4.73601 0.453077C4.76142 0.55898 4.75759 0.669799 4.72495 0.773699C4.39549 1.67621 4.33022 2.65399 4.53679 3.5923C4.74335 4.53061 5.21319 5.39053 5.89116 6.07114C6.57546 6.74721 7.4372 7.21558 8.3766 7.42202C9.31601 7.62847 10.2947 7.56455 11.1993 7.23766C11.3069 7.19975 11.4232 7.19329 11.5344 7.21902C11.6456 7.24476 11.7472 7.30164 11.8272 7.383C11.9073 7.46436 11.9626 7.56685 11.9866 7.67847C12.0106 7.7901 12.0023 7.90625 11.9627 8.01334C11.6556 8.83334 11.1759 9.57773 10.556 10.1961C9.97944 10.7711 9.29492 11.2265 8.54183 11.536C7.78873 11.8456 6.9819 12.0033 6.16769 11.9999Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </div>
-            <a
-              href="mailto:ekenemadunagu@gmail.com"
-              class="magnetic cta"
-              cursor-type="button"
-            >
-              Contact<span aria-hidden="true">&rarr;</span></a
-            >
-          </div>
-        </nav>
-
-        <!-- Mobile menu, show/hide based on menu open state. -->
-        <div class="hidden lg:hidden" role="dialog" aria-modal="true">
-          <div
-            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-          >
-            <div class="flex items-center justify-between">
-              <a href="#" class="-m-1.5 p-1.5">
-                <span class="sr-only">Your Company</span>
-                <img
-                  class="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt=""
-                />
-              </a>
-              <button
-                type="button"
-                class="-m-2.5 rounded-md p-2.5 text-gray-700"
-              >
-                <span class="sr-only">Close menu</span>
-                <svg
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-hidden="true"
+          <div class="mt-6 flow-root">
+            <div class="my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >Home</a
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div class="mt-6 flow-root">
-              <div class="my-6 divide-y divide-gray-500/10">
-                <div class="space-y-2 py-6">
-                  <a
-                    href="#"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >Home</a
-                  >
-                  <a
-                    href="#"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >About</a
-                  >
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >About</a
+                >
 
-                  <a
-                    href="portfolio.html"
-                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >Portfolio</a
-                  >
-                </div>
-                <div class="py-6">
-                  <a
-                    href="#"
-                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    >Contact</a
-                  >
-                </div>
+                <a
+                  href="portfolio.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >Portfolio</a
+                >
+              </div>
+              <div class="py-6">
+                <a
+                  href="#"
+                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >Contact</a
+                >
               </div>
             </div>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
+    <main class="main-content">
+    <section class="hero" cursor-type="button">
 
       <div class="banner relative isolate px-6 pt-14 lg:px-10 flex flex-col">
         <div class="display absolute inset-x-0 mx-6 lg:mx-10 grid grid-cols-12">
@@ -657,6 +658,7 @@
         </div>
       </section>
     </div>
+    </main>
     <div class="blur-overlay fixed">
       <div class="blurred"></div>
       <div class="blurred"></div>
