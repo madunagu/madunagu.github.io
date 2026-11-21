@@ -194,7 +194,31 @@ export default function Experience() {
     return () => { ctx.revert(); storyMix.kill(); ScrollTrigger.removeEventListener('refresh', onRefresh); cancelAnimationFrame(raf); lenis.destroy(); };
   }, []);
 
-  const submit = (e: FormEvent<HTMLFormElement>) => { e.preventDefault(); setSent(true); };
+const submit = async (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  // setFormStatus('sending');
+
+  try {
+    const response = await fetch('https://formspree.io/f/xyewdqee', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Submission failed');
+    }
+
+    setSent(true);
+    form.reset();
+  } catch {
+    setSent(false);
+  }
+};
 
   return (
     <main ref={root} className={dark ? 'site theme-dark' : 'site theme-light'}>
